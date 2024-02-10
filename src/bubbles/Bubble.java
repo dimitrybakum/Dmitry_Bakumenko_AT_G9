@@ -1,4 +1,4 @@
-package com.bubbles;
+package bubbles;
 
 public class Bubble {
   final float MAX_BUBBLE_V = 0.3f;

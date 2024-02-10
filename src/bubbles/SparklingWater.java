@@ -1,4 +1,4 @@
-package com.bubbles;
+package bubbles;
 
 public class SparklingWater extends Water {
   final int MAX_1l_BUBBLES = 10000;

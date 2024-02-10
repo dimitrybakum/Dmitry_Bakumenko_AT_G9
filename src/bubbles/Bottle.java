@@ -1,4 +1,4 @@
-package com.bubbles;
+package bubbles;
 
 public class Bottle {
   float bottle_v;
