@@ -1,4 +1,4 @@
-package com.basetask;
+package basetask;
 
 public class TrainMethodsPrimitive {
   // - создать класс TrainMethodsPrimitive и в нем

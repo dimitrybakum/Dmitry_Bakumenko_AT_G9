@@ -1,4 +1,4 @@
-package com.basetask;
+package basetask;
 
 import static java.lang.StringTemplate.STR;
 

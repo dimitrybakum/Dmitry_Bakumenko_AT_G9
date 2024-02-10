@@ -1,4 +1,4 @@
-package com.cycletask;
+package cycletask;
 
 public class PublicIntegerArray extends PublicIntArray {
 

@@ -1,4 +1,4 @@
-package com.basetask;
+package basetask;
 
 public class Souce {
   String name;

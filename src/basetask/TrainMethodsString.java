@@ -1,4 +1,4 @@
-package com.basetask;
+package basetask;
 
 public class TrainMethodsString {
   public void printMama() {

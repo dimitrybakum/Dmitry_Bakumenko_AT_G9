@@ -1,4 +1,4 @@
-package com.pretask;
+package pretask;
 
 public class IncrementDecrementExample {
   public static void main(String[] args) {

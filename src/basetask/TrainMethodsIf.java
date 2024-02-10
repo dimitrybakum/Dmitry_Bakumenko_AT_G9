@@ -1,4 +1,4 @@
-package com.basetask;
+package basetask;
 
 public class TrainMethodsIf {
   public int returnNewInt(int intValue) {

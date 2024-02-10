@@ -1,4 +1,4 @@
-package com.pretask;
+package pretask;
 
 public class NumberPrinting {
   public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.pretask;
+package pretask;
 
 // - класс MessageExample, выведите на экран любое сообщение, которое вы хотите;
 public class MessageExample {

@@ -1,4 +1,4 @@
-package com.cycletask;
+package cycletask;
 
 import java.util.Arrays;
 

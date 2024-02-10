@@ -1,4 +1,4 @@
-package com.basetask;
+package basetask;
 
 // -- создать класс TrainMethodsReturnRunner с методом main, в котором создать обьект класса
 // TrainMethodsReturn, и отпечатать в консоль значение, возвращаемое каждым из его методов в виде

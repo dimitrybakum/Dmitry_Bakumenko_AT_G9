@@ -1,4 +1,4 @@
-package com.basetask;
+package basetask;
 
 public class TrainMethodsObjects {
   public void processMouse(Mouse mouse) {

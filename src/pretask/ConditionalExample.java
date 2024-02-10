@@ -1,4 +1,4 @@
-package com.pretask;
+package pretask;
 
 public class ConditionalExample {
   public static void main(String[] args) {
