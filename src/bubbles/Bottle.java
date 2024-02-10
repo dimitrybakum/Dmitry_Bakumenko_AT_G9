@@ -12,16 +12,8 @@ public class Bottle {
     return bottle_v;
   }
 
-  public void setBottle_v(float bottle_v) {
-    this.bottle_v = bottle_v;
-  }
-
   public float getWater() {
     return water;
-  }
-
-  public void setWater(float water) {
-    this.water = water;
   }
 
   public void open(Bubble[] inBottle) {
