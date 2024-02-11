@@ -1,23 +1,24 @@
 package project.bubbles;
 
 public class Bottle {
-  float bottle_v;
-  float water;
+  public float bottle_v;
+  public SparklingWater water;
 
   public Bottle(float bottle_v) {
     this.bottle_v = bottle_v;
+    this.water = new SparklingWater();
+    this.water.setBubbles(this.bottle_v);
+  }
+
+  public void open() {
+    this.water.degas();
   }
 
   public float getBottle_v() {
     return bottle_v;
   }
 
-  public float getWater() {
+  public SparklingWater getWater() {
     return water;
-  }
-
-  public void open(Bubble[] inBottle) {
-    SparklingWater sparklingWater = new SparklingWater();
-    sparklingWater.degas(inBottle);
   }
 }

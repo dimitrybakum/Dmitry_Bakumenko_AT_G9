@@ -2,44 +2,34 @@ package project.bubbles;
 
 import java.util.Random;
 
-import static java.lang.Float.valueOf;
-
 public class Bubble {
-  public static void main(String[] args){
-
-  }
   Random random = new Random();
   final float MAX_BUBBLE_V = 0.3f;
 
-  float bubble_V=888;
-  String gaz = "CO2";
+  float bubble_V = random.nextFloat(MAX_BUBBLE_V);
+  String gaz;
 
-  public Bubble() {
-    this.bubble_V = random.nextFloat(MAX_BUBBLE_V);
-    }
-
-  public float getBubble_V() {
-    System.out.println(valueOf(bubble_V));
-    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-    return bubble_V;
-  }
-
-  public Bubble[] bubblesArray() {
-    Bubble[] bubblesArray = new Bubble[10000];
-    for (int i = 0; i < bubblesArray.length; i++) {
-    bubblesArray[i] = new Bubble();
-    }
-    return bubblesArray;
-  }
-  public String getGaz() {
-
-    return gaz;
-  }
-
-  public void setGaz(String gaz) {
-
+  public Bubble(String gaz) {
     this.gaz = gaz;
   }
 
+  public void crampBubble() {
+    System.out.println("Cramp!!!");
+  }
 
+  public float getBubble_V() {
+    return bubble_V;
+  }
+
+  public String getGaz() {
+    return gaz;
+  }
+
+  public void setBubble_V(float bubble_V) {
+    this.bubble_V = bubble_V;
+  }
+
+  public void setGaz(String gaz) {
+    this.gaz = gaz;
+  }
 }
