@@ -2,16 +2,19 @@ package homework.day2.cycletask;
 
 import java.util.Arrays;
 
-public class MinFromArray extends PublicIntArray {
-  public void getMinFromArray() {
+public class MinFromArray {
+  int[] array = {2345, 243, 55, 234, 63};
 
-    for (int i = 0; i < ARRAY_SIZE; i++) {
-      PUBLIC_ARRAY[i] = random.nextInt(SHORT_VALUE);
+  public void getMinFromArray() {
+    int tempV = 0;
+    for (int i = 0; i < array.length; i++) {
+      tempV = array[i];
+      for (int y = 1; y < array.length; y++) {
+        if (tempV > array[y]) {
+          tempV = array[y];
+        }
+      }
     }
-    System.out.println();
-    System.out.println("MinFromArray full  :" + Arrays.toString(this.PUBLIC_ARRAY));
-    System.out.println(
-        "MinFromArray minimal  :" + Arrays.stream(this.PUBLIC_ARRAY).min().getAsInt());
-    System.out.println();
+    System.out.println("minimall value from array : " + tempV);
   }
 }

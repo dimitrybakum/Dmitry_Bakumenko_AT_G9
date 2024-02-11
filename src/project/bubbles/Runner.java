@@ -1,5 +1,7 @@
 package project.bubbles;
 
+import project.bubbles.boxing.Bottle;
+
 public class Runner {
   public static void main(String[] args) {
     Bottle bottle1 = new Bottle(0.05f);

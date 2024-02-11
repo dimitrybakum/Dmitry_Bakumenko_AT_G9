@@ -1,4 +1,6 @@
-package project.bubbles;
+package project.bubbles.water;
+
+import project.bubbles.gas.Bubble;
 
 public class SparklingWater extends Water {
   final int MAX_1l_BUBBLES = 10000;

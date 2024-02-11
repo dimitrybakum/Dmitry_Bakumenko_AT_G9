@@ -2,17 +2,17 @@ package homework.day2.cycletask;
 
 import java.util.Arrays;
 
-public class MixedArray extends PublicIntArray {
-    public void getMixedArray() {
+public class MixedArray {
+  int[] array = new int[] {1, 2, 3, 4, 5, 6, 7};
 
-        for (int i = 0; i < ARRAY_SIZE; i++) {
-            PUBLIC_ARRAY[i] = random.nextInt(SHORT_VALUE);
-        }
-        System.out.println("MixedArray before" + Arrays.toString(PUBLIC_ARRAY));
-        int newVale = PUBLIC_ARRAY[0];
-        PUBLIC_ARRAY[0] = PUBLIC_ARRAY[6];
-        PUBLIC_ARRAY[6] = newVale;
-        System.out.println("MixedArray after" + Arrays.toString(PUBLIC_ARRAY));
-        System.out.println();
-    }
+  public void getMixedArray() {
+
+    for (int i = 0; i < array.length; i++) {}
+    System.out.println("MixedArray before" + Arrays.toString(array));
+    int newVale = array[0];
+    array[0] = array[6];
+    array[6] = newVale;
+    System.out.println("MixedArray after" + Arrays.toString(array));
+    System.out.println();
+  }
 }

@@ -1,4 +1,4 @@
-package project.bubbles;
+package project.bubbles.gas;
 
 import java.util.Random;
 

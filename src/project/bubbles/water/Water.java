@@ -1,4 +1,4 @@
-package project.bubbles;
+package project.bubbles.water;
 
 public abstract class Water {
   float temp;

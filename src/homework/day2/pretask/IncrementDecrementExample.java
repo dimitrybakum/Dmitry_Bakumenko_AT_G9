@@ -4,9 +4,8 @@ public class IncrementDecrementExample {
   public static void main(String[] args) {
     // - класс IncrementDecrementExample, объявите целочисленную переменную и используйте операторы
     // инкремента и декремента для изменения её значения, выведите результаты на экран;
-    final int MY_VAR = 5;
-    int myDec = MY_VAR;
-    int myInc = MY_VAR;
+    int myDec = 5;
+    int myInc = 5;
     --myDec;
     System.out.println(myDec);
     ++myInc;

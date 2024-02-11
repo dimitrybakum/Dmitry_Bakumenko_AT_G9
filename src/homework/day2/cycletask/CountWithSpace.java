@@ -1,11 +1,9 @@
 package homework.day2.cycletask;
 
 public class CountWithSpace {
-  int printValue = 0;
-  String newStr = "";
-
   public void getCountWitSpace() {
-
+    int printValue = 0;
+    String newStr = "";
     while (printValue <= 20) {
       newStr += printValue + " ";
       printValue += 1;

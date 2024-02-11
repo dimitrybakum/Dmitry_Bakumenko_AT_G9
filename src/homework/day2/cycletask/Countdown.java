@@ -2,16 +2,12 @@ package homework.day2.cycletask;
 
 import java.util.Arrays;
 import java.util.Collections;
-// need public integer array
 
-public class Countdown extends PublicIntegerArray {
+public class Countdown {
+
+  int[] array = {345, 243, 55, 34, 63};
+  String str = "  COUNTDOWN:";
   public void getCountdownArray() {
-    for (int i = 0; i < ARRAY_SIZE; i++) {
-      PUBLIC_INT_ARRAY[i] = random.nextInt(SHORT_VALUE);
-    }
-    Arrays.sort(PUBLIC_INT_ARRAY, Collections.reverseOrder());
-    System.out.println();
-    System.out.println("Countdown elements : " + Arrays.toString(PUBLIC_INT_ARRAY));
-    System.out.println();
+    //toDo
   }
 }
