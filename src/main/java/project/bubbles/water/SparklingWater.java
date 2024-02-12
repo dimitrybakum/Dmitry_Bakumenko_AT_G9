@@ -3,25 +3,45 @@ package project.bubbles.water;
 import project.bubbles.gas.Bubble;
 
 public class SparklingWater extends Water {
-  final int MAX_1l_BUBBLES = 10000;
-  public Bubble[] bubbles;
+  private boolean isOpened;
+  private Bubble[] bubbles;
 
-  public void setBubbles(float bottle_v) {
-    this.bubbles = new Bubble[(int) (bottle_v * MAX_1l_BUBBLES)];
-    this.bubbles = pump(bubbles);
+  public SparklingWater(int temperature, String color, String transparency, String smell) {
+    super(temperature, transparency, color, smell);
+    isOpened();
   }
 
-  public Bubble[] pump(Bubble[] bubbles) {
-    for (int i = 0; i < bubbles.length; i++) {
-      bubbles[i] = new Bubble("Co2");
-    }
-    return bubbles;
+  public void pump(Bubble[] bubbles) {
+    System.out.println("water carbonation in progress...");
+    this.bubbles = bubbles;
   }
 
-  public void degas() {
-    for (int i = 0; i < bubbles.length; i++) {
-      this.bubbles[i].crampBubble();
+  public void setOpened() {
+    System.out.printf("bottle is opened").println();
+    isOpened = true;
+    this.degas();
+  }
+
+  private void degas() {
+    System.out.println("degas in progress...");
+    int partOfBubbles = 10 + 5 * getTemperature();
+    for (int i = 0; i <= bubbles.length - 1; i++) {
+      if (i % partOfBubbles == 0) {
+        try {
+          Thread.sleep(1000);
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+        System.out.println("part of bubbles are burst");
+      }
+      this.bubbles[i].cramp();
       this.bubbles[i] = null;
     }
+    System.out.println(
+        "all bubbles are burst, " + bubbles.length + " in total with step " + partOfBubbles);
+  }
+
+  private void isOpened() {
+    // ------ есть приватный метод void isOpened(), который пока ничего не делает
   }
 }
