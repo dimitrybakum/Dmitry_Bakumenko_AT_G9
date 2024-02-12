@@ -40,9 +40,13 @@ public class ArrayMethods {
 
   public void showHorse() {
     System.out.println("\t  ^__^");
+
     System.out.println("\t  (oo)\\\\_______");
-    System.out.println("\t (__)\\ ) \\/\\  \\");
-    System.out.println("\t      ||----w |\\");
-    System.out.println("\t      ||     ||");
+
+    System.out.println();
+
+    System.out.println();
+
+    System.out.println();
   }
 }
