@@ -1,7 +1,5 @@
 package homework.day4;
 
-import java.util.Arrays;
-
 public class ArrayMethods {
 
   public void showSumArrayN(int[] array, int n) {
@@ -31,7 +29,6 @@ public class ArrayMethods {
   }
 
   public int showMonthArrayN(int[] array, int n) {
-    System.out.println("array " + Arrays.toString(array));
     int sum = 0;
     for (int j : array) {
       if (j % n == 0) {
