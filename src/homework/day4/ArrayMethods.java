@@ -37,4 +37,12 @@ public class ArrayMethods {
     }
     return sum;
   }
+
+  public void showHorse() {
+    System.out.println("\t  ^__^");
+    System.out.println("\t  (oo)\\\\_______");
+    System.out.println("\t (__)\\ ) \\/\\  \\");
+    System.out.println("\t      ||----w |\\");
+    System.out.println("\t      ||     ||");
+  }
 }
