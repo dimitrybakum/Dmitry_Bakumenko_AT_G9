@@ -11,7 +11,7 @@ public class Factory {
 
     bottle1.setWater(new SparklingWater( 12, "no", "transparent", "no"));
     bottle2.setWater(new SparklingWater( 18, "no", "transparent", "no"));
-    bottle3.setWater(new SparklingWater( 25, "yes", "transparent","no"));
+    bottle3.setWater(new SparklingWater( 25, "no", "transparent", "no"));
 
     bottle1.carbonation();
     bottle2.carbonation();

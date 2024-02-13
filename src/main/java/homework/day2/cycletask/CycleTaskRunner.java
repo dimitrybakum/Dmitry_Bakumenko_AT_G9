@@ -1,7 +1,5 @@
 package homework.day2.cycletask;
-import homework.day4.*;
 
-import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -17,33 +15,31 @@ public class CycleTaskRunner {
     myTestArray = array;
     System.out.println(Arrays.toString(array));
   }
-  public static void main(String[] args) {
-    CycleTaskRunner.showArray();
-    System.out.println("~~~~~~~~~~~~~~~~~~~~");
-    //arraySumN.showMonthArray(arraySumN.getMyTestArray(),LocalDate.now().getMonthValue());
-    //Countdown countdown = new Countdown();
-    //countdown.getCountdownArray();
-////
-    //ScquareArray scquareArray = new ScquareArray();
-    //scquareArray.getSquareArray();
-////
-    //CountWithSpace countWithSpace = new CountWithSpace();
-    //countWithSpace.getCountWitSpace();
-////
-    //MinFromArray minFromArray = new MinFromArray();
-    //minFromArray.getMinFromArray();
-////
-    //OddCounter oddCounter = new OddCounter();
-    //oddCounter.getOddCounter();
-////
-    //MixedArray mixedArray = new MixedArray();
-    //mixedArray.getMixedArray();
-////
-    //MultipliedArray multipliedArray = new MultipliedArray();
-    //multipliedArray.getMultipliedArray();
-////
-    //RevertedArray revertedArray = new RevertedArray();
-    //revertedArray.showRevertedArray();
 
+  public static void main(String[] args) {
+
+    Countdown countdown = new Countdown();
+    countdown.getCountdownArray();
+
+    ScquareArray scquareArray = new ScquareArray();
+    scquareArray.getSquareArray();
+
+    CountWithSpace countWithSpace = new CountWithSpace();
+    countWithSpace.getCountWitSpace();
+
+    MinFromArray minFromArray = new MinFromArray();
+    minFromArray.getMinFromArray();
+
+    OddCounter oddCounter = new OddCounter();
+    oddCounter.getOddCounter();
+
+    MixedArray mixedArray = new MixedArray();
+    mixedArray.getMixedArray();
+
+    MultipliedArray multipliedArray = new MultipliedArray();
+    multipliedArray.getMultipliedArray();
+
+    RevertedArray revertedArray = new RevertedArray();
+    revertedArray.showRevertedArray();
   }
 }

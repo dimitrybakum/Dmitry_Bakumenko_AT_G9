@@ -1,8 +1,7 @@
 package homework.day2.cycletask;
 
 import java.util.Arrays;
-import java.util.Random;
-import homework.day2.cycletask.Array;
+
 public class RevertedArray {
     int[] array = {1,2,3,4,5};
     public void showRevertedArray()  {
