@@ -1,6 +1,5 @@
 package homework.day2.cycletask;
 
-import java.util.Arrays;
 
 public class MinFromArray {
   int[] array = {2345, 243, 55, 234, 63};

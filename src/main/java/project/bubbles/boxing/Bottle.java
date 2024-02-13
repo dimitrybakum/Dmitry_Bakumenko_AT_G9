@@ -10,7 +10,6 @@ public class Bottle {
 
   public Bottle(double volume) {
     this.volume = volume;
-    //carbonation();
   }
 
   public double getVolume() {
