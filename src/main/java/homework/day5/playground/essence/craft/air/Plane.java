@@ -1,0 +1,5 @@
+package homework.day5.playground.essence.craft.air;
+
+import homework.day5.playground.essence.craft.Aircraft;
+
+public class Plane extends Aircraft {}

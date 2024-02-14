@@ -1,0 +1,219 @@
+первая часть домашнего задания к ближайшей субботе (пункты делаем ТОЛЬКО в том порядке, в котором они перечислены,
+ каждый Task делаем в отдельной ветке и мержим через PR)
+
+
+Task 1:
+- создать классы:
+package playground.essence
+материя (Matter)
+package playground.essence.creatures
+животные (Animal): насекомые (Insect), позвоночные (Vertebrata)
+насекомые: жук (Beetle), комар (Mosquito)
+, муха (Fly)
+позвоночные: голубь (Pigeon), ворон (Raven), крокодил (Crocodile)
+
+растения (Plant): цветы (Flower)
+, овощи (Vegetable)
+цветы: ландыш (Maylily), роза (Rose)
+, ромашка (Chamomile)
+овощи: картошка (Potato)
+, морковка (Carrot)
+, редис (Radish)
+package playground.essence.craft.air
+воздушные транспортные средства (Aircraft)
+: самолет (Plane)
+, вертолет (Copter), ракета (Rocket)
+
+package playground.essence.craft.field
+наземные транспортные средства (Vehicle): автомобиль (Car)
+, мотоцикл (Motorbike), мопед (Moped)
+package playground.essence.craft.hand
+емкости (Container): бутылка (Bottle), кружка (Mug), банка (Can)
+package playground.essence.material
+бензин (Petrol), дизельное топливо (Diesel), вода (Water)
+- материя, животные, насекомые, позвоночные, воздушные транспортные стредства,
+ наземные транспортные стредства, емкости, растения, цветы, овощи - абстрактный классы,
+
+  остальные их наследники
+
+- животные, растения, транспортные средства и емкости наследуются от материи,
+ иерархия остальных классов согласна их перечислению
+
+Task 2:
+- добавить в классы характеристики и возможности:
+-- у материи должно быть protected поле веса, int mass, конструктор, соответствующие геттеры и сеттеры
+-- у животных, растений, транспортных стредств и емкостей должно быть protected поле имени, String name, конструктор, соответствующие геттеры и сеттеры
+-- все животные имеют не абстрактный публичный метод void eat(Plant food) - принимает обьект растения и печатает в консоль фразу "I am N and I am eating D", где N - имя соответствующего обьекта класса животного, D - имя обьекта растения из передаваемого аргумента, использовать Format string syntax
+-- все позвоночные имеют не абстрактный публичный метод void eat(Insect food) - принимает обьект насекомого и печатает в консоль фразу "I am N and I am eating D", где N - имя соответствующего обьекта класса позвоночного, D - имя обьекта насекомого из передаваемого аргумента, использовать Format string syntax
+-- у жука есть не абстрактный публичный метод void nest(Carrot home) - принимает обьект морковки, сравнивает свою массу с массой последней и если его масса меньше, то печатает в консоль фразу "I am N and I will nest there with D my family members!", где N - имя соответствующего обьекта класса жука, D -  целая чать от деления массы моркови на массу жука, в противном случае печатает в консоль фразу "This carrot is too small for nesting :(
+", использовать, Format string syntax
+
+Task 3:
+- создать интерфейсы (которые реализуются соответствующими классами, согласно перечислению):
+package playground.essence
+летающие (Flyable): воздушные транспортные стредства, комар, муха
+package playground.essence.craft
+перемещающие (Transportable): воздушные транспортные стредства, наземные транспортные стредства
+ездящие (Rideable): наземные транспортные стредства
+package playground.essence.creatures;
+ползающие (Crawlable): жук, крокодил
+package playground.essence.craft.hand
+хранящие (Storable): бутылка, банка
+package playground.essence.material
+льющиеся (Pourable): бензин, дизельное топливо, вода
+питающие (Powerable): бензин, дизельное топливо
+
+--- imcremental tasks
+
+Task 4:
+- обновляем интерфейсы:
+-- интерфейс летающие имеют невозвратный метод fly(String direction); - принимает строку направления движения и печатает в консоль фразу "I am N, my name is M and I amd flying to D", где N - название класса соответствующего обьекта, М - значение name обьекта, D - строка, подставляемая из значения передаваемого аргумента
+
+- создаем классы:
+-- package playground.utils
+-- class DirectionGenerator
+у него есть публичный статический метод generateDirection() - который генерирует случайное число от 1 (включая) до 40 (исключая), и возвращает строку одного из 4-х значений направления, следуя логике, если случайное от 1 до 9 - NORTH, от 10 до 19 - SOUTH, от 20 до 29 - WEST, от 30 до 39 - EAST
+-- package playground.processors
+-- class FlyableProcessor
+у него есть перегруженный публичный невозвратный метод:
+runFlyable(Flyable flyable) - принимает обьект летающего и вызывает у него метод fly, которому передает случайное направления, которое генерируется вызовом метода generateDirection() из утилиты DirectionGenerator
+runFlyable(Flyable flyable, String direction) - принимает обьект летающего и строку направления, и вызывает у первого метод fly, которому передает строку направления, переданную в качестве аргумента
+
+- выполняем код:
+-- package playground.runners
+-- class FlyableProcessorRunner с методом main, в котором
+-- создать обьект класса FlyableProcessor
+-- создать следующие обьекты:
+Flyable flyableCopter = new Copter(223, "Mi8 Flyable");
+Flyable flyablePlane = new Plane(3452, "Boeing 837 Flyable");
+Flyable flyableRocket = new Rocket(7623, "Super Heavy Flyable");
+Flyable flyableFly = new Fly(23, "Domestica Flyable");
+Flyable flyableMosquito = new Mosquito(12, "Vulgaris Flyable");
+Aircraft aircraftCopter = new Copter(223, "Mi8 Aircraft");
+Aircraft aircraftPlane = new Plane(3452, "Boeing 837 Aircraft");
+Aircraft aircraftRocket = new Rocket(7623, "Super Heavy Aircraft");
+Insect insectFly = new Fly(23, "Domestica Insect");
+Insect insectMosquito = new Mosquito(12, "Vulgaris Insect");
+Copter aCopter = new Copter(223, "Mi8 Copter");
+Plane aPlane = new Plane(3452, "Boeing 837 Plane");
+Rocket aRocket = new Rocket(7623, "Super Heavy Rocket");
+Fly aFly = new Fly(23, "Domestica Fly");
+Mosquito aMosquito = new Mosquito(12, "Vulgaris Mosquito");
+-- при помощи обьекта класса FlyableProcessor запустить runFlyable с каждым из обьектов из предыдущего пункта
+-- в случае, если метод runFlyable не смог принять на вход обьект, закомментировать вызов метода и добавить пояснение причины
+-- при помощи обьекта класса FlyableProcessor запустить runFlyable с 2-мя любыми обьектами Flyable и направлениями "никуда" и "повсюду"
+
+Task 5:
+- обновляем интерфейсы:
+--перемещающие: имеют метод int move(int pointA, int pointB); - принимает 2 целых числа и печатает в консоль фразу "I am N, my name is M and I am moving from point A to point B", где N - название класса соответствующего обьекта, М - значение name обьекта, А и В - числа, подставляемые из значения передаваемых аргументов, и возвращает целое число, являющееся разницей В и А
+
+- создаем классы:
+-- package playground.utils
+-- class CoordinatesGenerator
+у него есть публичный статический метод generateCoordinate() - который генерирует случайное число от 1 (включая) до 80 (исключая), печатает в консоль строку "CoordinatesGenerator: I have generated point with value: X", где Х - сгенерированное число, и возвращает это число
+
+-- package playground.processors
+-- class TransportableProcessor
+у него есть перегруженный публичный невозвратный метод:
+runTransportable(Transportable transportable, int pointA, int pointB) - принимает обьект перемещающего и числа точек перемещения А и В, и вызывает у первого метод move, которому передает точки перемещения, после чего печатает в консоль строку "Transportable N was moved to M points", где N - название класса соответствующего обьекта, M - получаемое значение расстояния в результате выполнения метода move
+runTransportable(Transportable transportable) - принимает обьект перемещающего, и вызывает у него move, которому передает случайные значения точек перемещения, которые генерируется вызовами метода generateCoordinate() из утилиты CoordinatesGenerator, после чего печатает в консоль строку "Transportable N was moved to M points", где N - название класса соответствующего обьекта, M - получаемое значение расстояния в результате выполнения метода move
+
+- выполняем код:
+-- package playground.runners
+-- class TransportableProcessorRunner с методом main, в котором
+-- создать обьект класса TransportableProcessor
+-- создать следующие обьекты:
+Transportable transportableCopter = new Copter(223, "AW109 Transportable");
+Transportable transportablePlane = new Plane(3452, "Airbus a380 Transportable");
+Transportable transportableRocket = new Rocket(7623, "Soyuz-FG Transportable");
+Transportable transportableCar = new Car(23, "Tesla X Transportable");
+Transportable transportableMoped = new Moped(12, "Honda EM1 Transportable");
+Transportable transportableMotorbike = new Motorbike(12, "Suzuki GSX-R1000 Transportable");
+Aircraft aircraftCopter = new Copter(223, "AW109 Aircraft");
+Aircraft aircraftPlane = new Plane(3452, "Airbus a380 Aircraft");
+Aircraft aircraftRocket = new Rocket(7623, "Soyuz-FG Aircraft");
+Vehicle vehicleCar = new Car(23, "Tesla X Vehicle");
+Vehicle vehicleMoped = new Moped(12, "Honda EM1 Vehicle");
+Vehicle vehicleMotorbike = new Motorbike(12, "Suzuki GSX-R1000 Vehicle");
+Flyable flyableCopter = new Copter(223, "AW109 Flyable");
+Flyable flyablePlane = new Plane(3452, "Airbus a380 Flyable");
+Flyable flyableRocket = new Rocket(7623, "Soyuz-FG Flyable");
+Rideable rideableCar = new Car(23, "Tesla X Rideable");
+Rideable rideableMoped = new Moped(12, "Honda EM1 Rideable");
+Rideable rideableMotorbike = new Motorbike(12, "Suzuki GSX-R1000 Rideable");
+Copter aCopter = new Copter(223, "AW109 Copter");
+Plane aPlane = new Plane(3452, "Airbus a380 Plane");
+Rocket aRocket = new Rocket(7623, "Soyuz-FG Rocket");
+Car aCar = new Car(23, "Tesla X Car");
+Moped aMoped = new Moped(12, "Honda EM1 Moped");
+Motorbike aMotorbike = new Motorbike(12, "Suzuki GSX-R1000 Motorbike");
+-- при помощи обьекта класса TransportableProcessor запустить runTransportable с каждым из обьектов из предыдущего пункта
+-- в случае, если метод runTransportable не смог принять на вход обьект, закомментировать вызов метода и добавить пояснение причины
+-- при помощи обьекта класса TransportableProcessor запустить runTransportable с 2-мя любыми обьектами Transportable и точеками перемещения 23 и 242, 93 и 7
+
+Task 6:
+- обновляем интерфейсы:
+--ездящие: имеют метод void drive(String direction); - принимает строку направления движения и печатает в консоль фразу "I am N, my name is M and I amd driving to D", где N - название класса соответствующего обьекта, М - значение name обьекта, D - строка, подставляемая из значения передаваемого аргумента
+
+- создаем классы:
+-- package playground.processors
+-- class RideableProcessor
+у него есть перегруженный публичный невозвратный метод:
+runRideable(Rideable rideable) - принимает обьект ездящего и вызывает у него метод drive, которому передает случайное направления, которое генерируется вызовом метода generateDirection() из утилиты DirectionGenerator
+runRideable(Rideable rideable, String direction) - принимает обьект ездящего и строку направления, и вызывает у первого метод drive, которому передает строку направления, переданную в качестве аргумента
+
+- выполняем код:
+-- package playground.runners
+-- class RideableProcessorRunner с методом main, в котором
+-- создать обьект класса RideableProcessor
+-- создать следующие обьекты:
+Rideable rideableCar = new Car(223, "Lada Rideable");
+Rideable rideableMoped = new Moped(3452, "Honda EM1 837 Rideable");
+Rideable rideableMotorbike = new Motorbike(7623, "Suzuki GSX-R1000 Rideable");
+Vehicle vehicleCar = new Car(223, "Lada Vehicle");
+Vehicle vehicleMoped = new Moped(3452, "Honda EM1 837 Vehicle");
+Vehicle vehicleMotorbike = new Motorbike(7623, "Suzuki GSX-R1000 Vehicle");
+Car aCar = new Car(223, "Lada Car");
+Moped aMoped = new Moped(3452, "Honda EM1 837 Moped");
+Motorbike aMotorbike = new Motorbike(7623, "Suzuki GSX-R1000 Motorbike");
+Vehicle anonymousVehicle = new Vehicle(3452, "Honda EM1 837 Vehicle"){};
+Rideable anonymousRideable = new Rideable(){
+    String name = "Anonymous";
+    @Override
+    public void drive(String direction) {
+		System.out.printf("I am %s, my name is %s and I amd drive to %s%n",
+			this.getClass().getSimpleName(), this.name, direction);
+    }
+};
+-- при помощи обьекта класса RideableProcessor запустить runRideable с каждым из обьектов из предыдущего пункта
+-- в случае, если метод runRideable не смог принять на вход обьект, закомментировать вызов метода и добавить пояснение причины
+-- при помощи обьекта класса RideableProcessor запустить runRideable с 2-мя любыми обьектами Rideable и направлениями "никуда" и "повсюду"
+
+и еще кусочек задания к субботе:
+
+1. String task (коллекции и потоки, которые можно найти в образцах кода в интернете или подсказках от идеи, категорически не использовать!), каждое подзадание выполняем в отдельном классе
+1.1 сделать метод, который позволяет отпечатать в консоль все буквы в стобик из строки текста, которую принимает на вход в виде аргумента.
+1.2 сделать метод, который позволяет найти и вывести в консоль все дубликаты слов в строке текста, который принимает на вход в виде аргумента.
+1.3 сделать метод, который позволяет найти в тексте все цифры и преобразовать их в массив числовых переменных, вывести все элементы массива в косоль, текст получает на вход в виде аргумента
+1.4 имеется текстовый лог в виде (ниже общий вид, т.е. частный случай):
+
+access_log.2020.09.07 212.168.101.5 granted
+access_log.2020.09.07 212.168.101.6 denied
+access_log.2020.09.07 212.168.101.6 denied
+access_log.2020.09.07 212.168.122.6 denied
+
+написать метод, который принимает на вход текст лога и выводит список из уникальных IP адресов и количества удачных и неудачных попыток доступа в формате:
+ip 212.168.101.5: ok - 3, failed - 2
+
+1.5 написать метод, который выводит в консоль текущую дату и время в формате:
+Сейчас на дворе: 19 сентября, 2020, 3 часа 13 минут
+
+1.6 написать метод, который принимает на вход строку с датой и временем в формате "22.00 07.09.2020" и выводит в консоль в формате "September, 7, 2020 22:00"
+
+1.7 написать метод, который принимает на вход строку текста и выводит в консоль дату, которая на n дней больше, чем текущая в формате "Сгенерированная гласная дата: 7 мая", где n - это количество гласных буков в получаемой строке
+
+1.8 Создать класс StringObjectRunner, где в main методе создать по обьекту предыдущих классов и запустить выполнение созданных методов.
+
+1.9 Переписать в отдельных классах все методы созданные в заданиях 1.1 - 1.7, сделав их статическими.
+
+1.10 Создать класс StringStaticRunner, где в main методе запустить методы классов из предыдущего задания, обратитвшись к ним статически.
