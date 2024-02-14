@@ -1,3 +1,3 @@
 package homework.day5.playground.essence.creatures;
 
-public abstract class Flower {}
+public abstract class Flower extends Plant{}
