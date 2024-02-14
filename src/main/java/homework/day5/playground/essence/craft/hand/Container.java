@@ -1,4 +1,4 @@
-package homework.day5.playground.essence.craft;
+package homework.day5.playground.essence.craft.hand;
 
 import homework.day5.playground.essence.Matter;
 
