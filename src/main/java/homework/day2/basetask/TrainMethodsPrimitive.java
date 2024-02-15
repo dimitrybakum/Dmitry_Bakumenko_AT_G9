@@ -18,7 +18,7 @@ public class TrainMethodsPrimitive {
   // печатает в консоль «я получил на вход очень короткое число » и это число
   // -- создать невозвратный метод printBoolean, который принимает на вход булево значение (boolean)
   // и печатает в консоль «я получил на вход булево » и это число
-  // -- создать класс TrainMethodsPrimitiveRunner с методом main, в этом методе создать обьект
+  // -- создать класс TrainMethodsPrimitiveRunner с методом main, в этом методе создать объект
   // класса TrainMethodsPrimitive и вызвать всего его методы
 
   public char c1 = '$';

@@ -18,7 +18,7 @@ public class TrainMethodsReturn {
   // число умноженное на 2
   // -- создать метод returnNewBoolean, который принимает на вход булево значение (boolean) и
   // возвращает обратное булево
-  // -- создать класс TrainMethodsReturnRunner с методом main, в котором создать обьект класса
+  // -- создать класс TrainMethodsReturnRunner с методом main, в котором создать объект класса
   // TrainMethodsReturn, и отпечатать в консоль значение, возвращаемое каждым из его методов в виде
   // "метод <название метода> вернул " и возвращаемое значение
   public int returnNewInt(int intValue) { return 3 * intValue;}
