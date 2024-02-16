@@ -7,18 +7,18 @@ import homework.day5.playground.essence.craft.Transportable;
 
 public abstract class Aircraft extends Matter implements Transportable, Flyable, Rideable {
 
-    protected String name;
+  protected String name;
 
-    public Aircraft(int mass, String name) {
-        super(mass);
-        this.name = name;
-    }
+  public Aircraft(int mass, String name) {
+    super(mass);
+    this.name = name;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 }

@@ -4,7 +4,7 @@ import homework.day5.playground.essence.creatures.vegetable.Vegetable;
 
 public class Carrot extends Vegetable {
 
-    public Carrot(int mass, String name) {
-        super(mass, name);
-    }
+  public Carrot(int mass, String name) {
+    super(mass, name);
+  }
 }

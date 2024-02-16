@@ -1,7 +1,6 @@
 package homework.day5.playground.essence.creatures.vertebratas;
 
 import homework.day5.playground.essence.creatures.Animal;
-import homework.day5.playground.essence.creatures.Plant;
 import homework.day5.playground.essence.creatures.insects.Insect;
 
 public abstract class Vertebrata extends Animal {

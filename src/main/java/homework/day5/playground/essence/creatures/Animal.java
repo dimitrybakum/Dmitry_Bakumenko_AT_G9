@@ -9,8 +9,6 @@ public abstract class Animal extends Matter {
     super(mass);
     this.name = name;
   }
-  //  this.name = name;
-  //}
 
   public String getName() {
     return name;
@@ -21,8 +19,8 @@ public abstract class Animal extends Matter {
   }
 
   public void eat(Plant food) {
-    String text = String.format("Animal = {I am %s , and I am eating %s}",
-            getName(), food.getName());
+    String text =
+        String.format("Animal = {I am %s , and I am eating %s}", getName(), food.getName());
     // Format string syntax
     System.out.println(text);
   }

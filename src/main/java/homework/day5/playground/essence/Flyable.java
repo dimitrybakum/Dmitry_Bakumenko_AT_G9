@@ -1,14 +1,12 @@
 package homework.day5.playground.essence;
 
-import static java.lang.Character.getName;
-
 public interface Flyable {
   // летающие (Flyable): воздушные транспортные стредства, комар, муха
   default void fly(String direction) {
     String text =
         String.format(
             "{I am %s, my name is %s and I amd flying to %s}",
-                getClass().getSimpleName(), this.getName(), direction);
+            getClass().getSimpleName(), this.getName(), direction);
     System.out.println(text);
   }
 

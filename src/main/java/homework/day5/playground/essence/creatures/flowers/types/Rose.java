@@ -4,7 +4,7 @@ import homework.day5.playground.essence.creatures.flowers.Flower;
 
 public class Rose extends Flower {
 
-    public Rose(int mass, String name) {
-        super(mass, name);
-    }
+  public Rose(int mass, String name) {
+    super(mass, name);
+  }
 }
