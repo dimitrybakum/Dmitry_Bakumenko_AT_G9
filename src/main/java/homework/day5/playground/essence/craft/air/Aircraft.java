@@ -1,8 +1,9 @@
 package homework.day5.playground.essence.craft.air;
 
+import homework.day5.playground.essence.Flyable;
 import homework.day5.playground.essence.Matter;
 
-public abstract class Aircraft extends Matter {
+public abstract class Aircraft extends Matter implements Flyable {
 
     protected String name;
 

@@ -13,13 +13,16 @@ public class SparklingWater extends Water {
 
   public void pump(Bubble[] bubbles) {
     System.out.println("water carbonation in progress...");
-    this.bubbles = bubbles;
+    for (int i = 0; i < bubbles.length; i++) {
+      bubbles[i] = new Bubble("CO2");
+
+    }
   }
 
   public void setOpened() {
     System.out.printf("bottle is opened").println();
     isOpened = true;
-    this.degas();
+    degas();
   }
 
   private void degas() {
@@ -34,8 +37,8 @@ public class SparklingWater extends Water {
         }
         System.out.println("part of bubbles are burst");
       }
-      this.bubbles[i].cramp();
-      this.bubbles[i] = null;
+      bubbles[i].cramp();
+      bubbles[i] = null;
     }
     System.out.println(
         "all bubbles are burst, " + bubbles.length + " in total with step " + partOfBubbles);

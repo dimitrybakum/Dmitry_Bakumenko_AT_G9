@@ -1,5 +1,7 @@
 package homework.day4;
 
+import java.util.Arrays;
+
 public class ArrayMethods {
 
   public void showSumArrayN(int[] array, int n) {
@@ -25,6 +27,7 @@ public class ArrayMethods {
       c--;
       revertedArray[y] = newArray[c];
     }
+    //System.out.println(Arrays.toString(revertedArray));
     return revertedArray;
   }
 
@@ -35,6 +38,7 @@ public class ArrayMethods {
         sum += j;
       }
     }
+    System.out.printf(String.valueOf(sum)).println();
     return sum;
   }
 

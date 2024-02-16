@@ -10,9 +10,13 @@ public class Beetle extends Insect {
   }
 
   public void nest(Carrot home) {
-    //TODO Format string syntax
+    // Format string syntax
     if (mass < home.getMass()) {
-      System.out.println("I am N and I will nest there with D my family members!");
+      String text =
+          String.format(
+              "Beetle = {I am %s and I will nest there with %d my family members!}",
+              Beetle.class.getName(), home.getMass() / this.mass);
+      System.out.println(text);
     } else {
       System.out.println("This carrot is too small for nesting :(");
     }

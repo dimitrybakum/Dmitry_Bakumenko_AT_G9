@@ -21,8 +21,10 @@ public abstract class Animal extends Matter {
   }
 
   public void eat(Plant food) {
-    //TODO использовать Format string syntax
-    System.out.println("I am N and I am eating D");
+    String text = String.format("Animal = {I am %s , and I am eating %s}",
+            getName(), food.getName());
+    // Format string syntax
+    System.out.println(text);
   }
 }
 // -- все животные имеют не абстрактный публичный метод void eat(Plant food) - принимает объект
