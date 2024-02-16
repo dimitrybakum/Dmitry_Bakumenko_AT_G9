@@ -12,6 +12,12 @@ public interface Flyable {
     System.out.println(text);
   }
 
+  // и печатает в консоль фразу "I am N, my name is M and I amd flying to D",
+  // где N - название
+  // класса соответствующего объекта,
+  // М - значение name объекта,
+  // D - строка, подставляемая из
+  // значения передаваемого аргумента
   Object getName();
 }
 // TO DO наверное тоже использовать Format string syntax

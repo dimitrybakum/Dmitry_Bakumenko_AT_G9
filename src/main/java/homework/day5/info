@@ -147,18 +147,36 @@ Mosquito aMosquito = new Mosquito(12, "Vulgaris Mosquito");
 
 Task 5:
 - обновляем интерфейсы:
---перемещающие: имеют метод int move(int pointA, int pointB); - принимает 2 целых числа и печатает в консоль фразу "I am N, my name is M and I am moving from point A to point B", где N - название класса соответствующего объекта, М - значение name объекта, А и В - числа, подставляемые из значения передаваемых аргументов, и возвращает целое число, являющееся разницей В и А
+--перемещающие: имеют метод int move(int pointA, int pointB); - принимает 2 целых числа и печатает в консоль фразу
+"I am N, my name is M and I am moving from point A to point B",
+где N - название класса соответствующего объекта,
+М - значение name объекта,
+А и В - числа, подставляемые из значения передаваемых аргументов, и возвращает целое число, являющееся разницей В и А
 
 - создаем классы:
 -- package playground.utils
 -- class CoordinatesGenerator
-у него есть публичный статический метод generateCoordinate() - который генерирует случайное число от 1 (включая) до 80 (исключая), печатает в консоль строку "CoordinatesGenerator: I have generated point with value: X", где Х - сгенерированное число, и возвращает это число
+у него есть публичный статический метод generateCoordinate() -
+который генерирует случайное число от 1 (включая) до 80 (исключая),
+ печатает в консоль строку "CoordinatesGenerator: I have generated point with value: X", где Х - сгенерированное число,
+ и возвращает это число
 
 -- package playground.processors
 -- class TransportableProcessor
 у него есть перегруженный публичный невозвратный метод:
-runTransportable(Transportable transportable, int pointA, int pointB) - принимает объект перемещающего и числа точек перемещения А и В, и вызывает у первого метод move, которому передает точки перемещения, после чего печатает в консоль строку "Transportable N was moved to M points", где N - название класса соответствующего объекта, M - получаемое значение расстояния в результате выполнения метода move
-runTransportable(Transportable transportable) - принимает объект перемещающего, и вызывает у него move, которому передает случайные значения точек перемещения, которые генерируется вызовами метода generateCoordinate() из утилиты CoordinatesGenerator, после чего печатает в консоль строку "Transportable N was moved to M points", где N - название класса соответствующего объекта, M - получаемое значение расстояния в результате выполнения метода move
+runTransportable(Transportable transportable, int pointA, int pointB) - принимает объект перемещающего и
+числа точек перемещения А и В, и вызывает у первого метод move, которому передает точки перемещения,
+ после чего печатает в консоль строку "Transportable N was moved to M points",
+ где N - название класса соответствующего объекта,
+ M - получаемое значение расстояния в результате выполнения метода move
+
+runTransportable(Transportable transportable) -
+принимает объект перемещающего, и вызывает у него move,
+которому передает случайные значения точек перемещения,
+которые генерируется вызовами метода generateCoordinate() из утилиты CoordinatesGenerator,
+ после чего печатает в консоль строку "Transportable N was moved to M points",
+  где N - название класса соответствующего объекта,
+  M - получаемое значение расстояния в результате выполнения метода move
 
 - выполняем код:
 -- package playground.runners
@@ -189,6 +207,7 @@ Rocket aRocket = new Rocket(7623, "Soyuz-FG Rocket");
 Car aCar = new Car(23, "Tesla X Car");
 Moped aMoped = new Moped(12, "Honda EM1 Moped");
 Motorbike aMotorbike = new Motorbike(12, "Suzuki GSX-R1000 Motorbike");
+
 -- при помощи объекта класса TransportableProcessor запустить runTransportable с каждым из объектов из предыдущего пункта
 -- в случае, если метод runTransportable не смог принять на вход объект, закомментировать вызов метода и добавить пояснение причины
 -- при помощи объекта класса TransportableProcessor запустить runTransportable с 2-мя любыми объектами Transportable и точеками перемещения 23 и 242, 93 и 7
