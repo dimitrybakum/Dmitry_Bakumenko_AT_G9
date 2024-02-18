@@ -1,48 +1,33 @@
 package homework.day6;
 
-import homework.day5.playground.essence.Matter;
-import homework.day5.playground.essence.craft.air.Aircraft;
 import homework.day5.playground.essence.craft.air.types.Copter;
 import homework.day5.playground.essence.craft.air.types.Plane;
 import homework.day5.playground.essence.craft.air.types.Rocket;
-import homework.day5.playground.essence.craft.field.Vehicle;
 import homework.day5.playground.essence.craft.field.types.Car;
 import homework.day5.playground.essence.craft.field.types.Moped;
 import homework.day5.playground.essence.craft.field.types.Motorbike;
-import homework.day5.playground.essence.craft.hand.Container;
 import homework.day5.playground.essence.craft.hand.types.Can;
 import homework.day5.playground.essence.craft.hand.types.Mug;
-import homework.day5.playground.essence.creatures.Animal;
 import homework.day5.playground.essence.creatures.Crawlable;
-import homework.day5.playground.essence.creatures.Plant;
-import homework.day5.playground.essence.creatures.flowers.Flower;
 import homework.day5.playground.essence.creatures.flowers.types.Chamomile;
 import homework.day5.playground.essence.creatures.flowers.types.Maylily;
 import homework.day5.playground.essence.creatures.flowers.types.Rose;
-import homework.day5.playground.essence.creatures.insects.Insect;
 import homework.day5.playground.essence.creatures.insects.types.Beetle;
 import homework.day5.playground.essence.creatures.insects.types.Fly;
 import homework.day5.playground.essence.creatures.insects.types.Mosquito;
-import homework.day5.playground.essence.creatures.vegetable.Vegetable;
 import homework.day5.playground.essence.creatures.vegetable.type.Carrot;
 import homework.day5.playground.essence.creatures.vegetable.type.Potato;
 import homework.day5.playground.essence.creatures.vegetable.type.Radish;
-import homework.day5.playground.essence.creatures.vertebratas.Vertebrata;
 import homework.day5.playground.essence.creatures.vertebratas.types.Crocodile;
 import homework.day5.playground.essence.creatures.vertebratas.types.Pigeon;
 import homework.day5.playground.essence.creatures.vertebratas.types.Raven;
-import homework.day5.playground.essence.material.Pourable;
-import homework.day5.playground.essence.material.Powerable;
 import homework.day5.playground.essence.material.types.Diesel;
 import homework.day5.playground.essence.material.types.Petrol;
 import homework.day5.playground.essence.material.types.Water;
 import project.bubbles.boxing.Bottle;
 
 public class GenericMethodsInGenericClassTRunner {
-  // - создать класс GenericMethodsInGenericClassTRunner с методом main и в нем:
   public static void main(String[] args) {
-    // -- создать обьекты типа GenericMethodsInGenericClassT<T> с параметрами типа String, Integer,
-    // Double и всеми типами, которые содержаться в пакете playground.essence
     GenericMethodsInGenericClassT<String> my_String = new GenericMethodsInGenericClassT<>();
     GenericMethodsInGenericClassT<Integer> my_Integer = new GenericMethodsInGenericClassT<>();
     GenericMethodsInGenericClassT<Double> my_Double = new GenericMethodsInGenericClassT<>();
@@ -101,8 +86,6 @@ public class GenericMethodsInGenericClassTRunner {
     my_Petrol.genericMethodOneGenArg(new Petrol());
     my_Water.genericMethodOneGenArg(new Water());
 
-    // -- вызывать каждый из методов у каждого из обьектов, в случае, если метод возвратный -
-    // отпечатать возвращаемое им значение в консоль
     System.out.println(my_String.genericMethodTwoGenArgs("string1", "string2"));
     System.out.println(my_Integer.genericMethodTwoGenArgs(5, 6));
     System.out.println(my_Double.genericMethodTwoGenArgs(0.5, 0.5));
@@ -132,9 +115,6 @@ public class GenericMethodsInGenericClassTRunner {
     System.out.println(my_Petrol.genericMethodTwoGenArgs(new Petrol(), new Fly(5, "my_Fly")));
     System.out.println(my_Water.genericMethodTwoGenArgs(new Water(), new Chamomile(5, "my_Chamomile")));
 
-    // -- вызывать каждый из методов у каждого из обьектов, в случае, если метод возвратный -
-    // отпечатать
-    // возвращаемое им значение в консоль
     my_String.genericMethodHalfGenArgs("this is a string", "this is another string");
     my_Integer.genericMethodHalfGenArgs(5, "this is a string");
     my_Double.genericMethodHalfGenArgs(0.5, "this is a string");
@@ -163,5 +143,5 @@ public class GenericMethodsInGenericClassTRunner {
     my_Diesel.genericMethodHalfGenArgs(new Diesel(), "this is a string");
     my_Petrol.genericMethodHalfGenArgs(new Petrol(), "this is a string");
     my_Water.genericMethodHalfGenArgs(new Water(), "this is a string line");
-    }
+  }
 }

@@ -26,13 +26,7 @@ import homework.day5.playground.essence.material.types.Water;
 import project.bubbles.boxing.Bottle;
 
 public class GenericMethodsInGenericClassTwoParamsRunner {
-  // - создать класс GenericMethodsInGenericClassTwoParamsRunner с методом main и в нем:
     public static void main(String[] args){
-      // -- создать обьекты типа GenericMethodsInGenericClassTwoParams <X, Y> с параметрами типа
-      // <String, String>, <String, Integer>, <String, Double>, <Integer, Integer> и всеми типами,
-      // которые содержаться в пакете playground.essence, используя каждый из них хотя бы 1 раз
-      // -- вызывать каждый из методов у каждого из обьектов, в случае, если метод возвратный -
-      // отпечатать возвращаемое им значение в консоль
         GenericMethodsInGenericClassTwoParams <String, String> genericMethodsInGenericClassTwoParamsSS = new GenericMethodsInGenericClassTwoParams();
         System.out.println(genericMethodsInGenericClassTwoParamsSS.genericMethodGenArgs("this is a string"));
         System.out.println(genericMethodsInGenericClassTwoParamsSS.genericMethodGenArgs("this is a string", "this is another string"));
