@@ -102,15 +102,15 @@ public class GenericMethodsInGenericClassTwoParamsRunner {
 
         GenericMethodsInGenericClassTwoParams<Raven, Diesel> my_Raven_Diesel = new GenericMethodsInGenericClassTwoParams<>();
         System.out.println(my_Raven_Diesel.genericMethodGenArgs(new Raven(5, "my_Raven")));
-        System.out.println(my_Raven_Diesel.genericMethodGenArgs(new Raven(5, "my_Raven"), new Diesel()));
+        System.out.println(my_Raven_Diesel.genericMethodGenArgs(new Raven(5, "my_Raven"), new Diesel(74)));
         my_Raven_Diesel.genericMethodHalfGenArgs(new Raven(5, "my_Raven"), "this is a string");
-        my_Raven_Diesel.genericMethodHalfGenArgs(new Raven(5, "my_Raven"), new Diesel(), "this is a string");
+        my_Raven_Diesel.genericMethodHalfGenArgs(new Raven(5, "my_Raven"), new Diesel(64), "this is a string");
 
         GenericMethodsInGenericClassTwoParams<Petrol, Water> my_Petrol_Water = new GenericMethodsInGenericClassTwoParams<>();
-        System.out.println(my_Petrol_Water.genericMethodGenArgs(new Petrol()));
-        System.out.println(my_Petrol_Water.genericMethodGenArgs(new Petrol(), new Water()));
-        my_Petrol_Water.genericMethodHalfGenArgs(new Petrol(), "this is a string");
-        my_Petrol_Water.genericMethodHalfGenArgs(new Petrol(), new Water(), "this is a string");
+        System.out.println(my_Petrol_Water.genericMethodGenArgs(new Petrol(3)));
+        System.out.println(my_Petrol_Water.genericMethodGenArgs(new Petrol(53), new Water(23)));
+        my_Petrol_Water.genericMethodHalfGenArgs(new Petrol(5), "this is a string");
+        my_Petrol_Water.genericMethodHalfGenArgs(new Petrol(55), new Water(55), "this is a string");
   }
 
 }

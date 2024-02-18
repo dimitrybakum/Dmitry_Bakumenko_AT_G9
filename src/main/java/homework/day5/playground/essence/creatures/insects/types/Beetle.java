@@ -14,7 +14,7 @@ public class Beetle extends Insect {
     if (mass < home.getMass()) {
       String text =
           String.format(
-              "Beetle = {I am %s and I will nest there with %d my family members!}",
+              "{I am %s and I will nest there with %d my family members!}",
               Beetle.class.getName(), home.getMass() / this.mass);
       System.out.println(text);
     } else {

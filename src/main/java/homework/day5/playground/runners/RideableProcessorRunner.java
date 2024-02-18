@@ -21,7 +21,17 @@ public class RideableProcessorRunner {
     Car aCar = new Car(223, "Lada Car");
     Moped aMoped = new Moped(3452, "Honda EM1 837 Moped");
     Motorbike aMotorbike = new Motorbike(7623, "Suzuki GSX-R1000 Motorbike");
-    Vehicle anonymousVehicle = new Vehicle(3452, "Honda EM1 837 Vehicle") {};
+    Vehicle anonymousVehicle =
+        new Vehicle(3452, "Honda EM1 837 Vehicle") {
+          String name = "Anonymous";
+
+          @Override
+          public void drive(String direction) {
+            System.out.printf(
+                "I am %s, my name is %s and I and drive to %s%n",
+                getClass().getSimpleName(), name, direction);
+          }
+        };
     Rideable anonymousRideable =
         new Rideable() {
           String name = "Anonymous";
@@ -29,13 +39,8 @@ public class RideableProcessorRunner {
           @Override
           public void drive(String direction) {
             System.out.printf(
-                "I am %s, my name is %s and I amd drive to %s%n",
-                this.getClass().getSimpleName(), this.name, direction);
-          }
-
-          @Override
-          public Object getName() {
-            return null;
+                "I am %s, my name is %s and I and drive to %s%n",
+                getClass().getSimpleName(), name, direction);
           }
         };
 
@@ -50,7 +55,6 @@ public class RideableProcessorRunner {
     rideableProcessor.runRideable(aMotorbike);
     rideableProcessor.runRideable(anonymousVehicle);
     rideableProcessor.runRideable(anonymousRideable);
-
     rideableProcessor.runRideable(vehicleMoped, "никуда");
     rideableProcessor.runRideable(vehicleMotorbike, "повсюду");
   }

@@ -102,7 +102,7 @@ package playground.essence.material
 Task 4:
 - обновляем интерфейсы:
 -- интерфейс летающие имеют невозвратный метод fly(String direction); - принимает строку направления движения
-и печатает в консоль фразу "I am N, my name is M and I amd flying to D", где N - название класса соответствующего объекта, М - значение name объекта, D - строка, подставляемая из значения передаваемого аргумента
+и печатает в консоль фразу "I am N, my name is M and I and flying to D", где N - название класса соответствующего объекта, М - значение name объекта, D - строка, подставляемая из значения передаваемого аргумента
 
 - создаем классы:
 -- package playground.utils
@@ -215,7 +215,7 @@ Motorbike aMotorbike = new Motorbike(12, "Suzuki GSX-R1000 Motorbike");
 Task 6:
 - обновляем интерфейсы:
 --ездящие: имеют метод void drive(String direction); - принимает строку направления движения и печатает в консоль
-фразу "I am N, my name is M and I amd driving to D",
+фразу "I am N, my name is M and I and driving to D",
 где N - название класса соответствующего объекта,
 М - значение name объекта,
 D - строка, подставляемая из значения передаваемого аргумента
@@ -246,7 +246,7 @@ Rideable anonymousRideable = new Rideable(){
     String name = "Anonymous";
     @Override
     public void drive(String direction) {
-		System.out.printf("I am %s, my name is %s and I amd drive to %s%n",
+		System.out.printf("I am %s, my name is %s and I and drive to %s%n",
 			this.getClass().getSimpleName(), this.name, direction);
     }
 };

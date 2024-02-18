@@ -81,10 +81,10 @@ public class GenericMethodsInGenericClassTRunner {
     my_Crocodile.genericMethodOneGenArg(new Crocodile(5, "my_Crocodile"));
     my_Pigeon.genericMethodOneGenArg(new Pigeon(5, "my_Pigeon"));
     my_Raven.genericMethodOneGenArg(new Raven(5, "my_Raven"));
-    my_Crawlable.genericMethodOneGenArg(new Crawlable());
-    my_Diesel.genericMethodOneGenArg(new Diesel());
-    my_Petrol.genericMethodOneGenArg(new Petrol());
-    my_Water.genericMethodOneGenArg(new Water());
+    my_Crawlable.genericMethodOneGenArg(new Crocodile(1000, "Gena"));
+    my_Diesel.genericMethodOneGenArg(new Diesel(4));
+    my_Petrol.genericMethodOneGenArg(new Petrol(4));
+    my_Water.genericMethodOneGenArg(new Water(5));
 
     System.out.println(my_String.genericMethodTwoGenArgs("string1", "string2"));
     System.out.println(my_Integer.genericMethodTwoGenArgs(5, 6));
@@ -94,12 +94,12 @@ public class GenericMethodsInGenericClassTRunner {
     System.out.println(my_Rocket.genericMethodTwoGenArgs(new Rocket(100, "Sarmat"), new Pigeon(5, "my_Pigeon")));
     System.out.println(my_Car.genericMethodTwoGenArgs(new Car(1300, "Mazda"), new Rose(5, "my_Rose")));
     System.out.println(my_Moped.genericMethodTwoGenArgs(new Moped(134, "Java"), new Radish(5, "my_Radish")));
-    System.out.println(my_Motorbike.genericMethodTwoGenArgs(new Motorbike(457, "Honda"), new Diesel()));
+    System.out.println(my_Motorbike.genericMethodTwoGenArgs(new Motorbike(457, "Honda"), new Diesel(5)));
     System.out.println(my_Bottle.genericMethodTwoGenArgs(new Bottle(0.5), new Maylily(5, "my_Maylily")));
-    System.out.println(my_Can.genericMethodTwoGenArgs(new Can(200, "my_Can"), new Petrol()));
+    System.out.println(my_Can.genericMethodTwoGenArgs(new Can(200, "my_Can"), new Petrol(33)));
     System.out.println(my_Mug.genericMethodTwoGenArgs(new Mug(250, "my_Mug"), new Potato(5, "my_Potato")));
     System.out.println(my_Chamomile.genericMethodTwoGenArgs(new Chamomile(5, "my_Chamomile"), new Beetle(5, "my_Beetle")));
-    System.out.println(my_Maylily.genericMethodTwoGenArgs(new Maylily(5, "my_Maylily"), new Water()));
+    System.out.println(my_Maylily.genericMethodTwoGenArgs(new Maylily(5, "my_Maylily"), new Water(5)));
     System.out.println(my_Rose.genericMethodTwoGenArgs(new Rose(5, "my_Rose"), new Fly(5, "my_Fly")));
     System.out.println(my_Beetle.genericMethodTwoGenArgs(new Beetle(5, "my_Beetle"), new Radish(5, "my_Radish")));
     System.out.println(my_Fly.genericMethodTwoGenArgs(new Fly(5, "my_Fly"), new Crocodile(5, "my_Crocodile")));
@@ -110,10 +110,10 @@ public class GenericMethodsInGenericClassTRunner {
     System.out.println(my_Crocodile.genericMethodTwoGenArgs(new Crocodile(5, "my_Crocodile"), new Motorbike(457, "Honda")));
     System.out.println(my_Pigeon.genericMethodTwoGenArgs(new Pigeon(5, "my_Pigeon"), new Plane(155, "Airbus")));
     System.out.println(my_Raven.genericMethodTwoGenArgs(new Raven(5, "my_Raven"), new Moped(55, "Suzuki")));
-    System.out.println(my_Crawlable.genericMethodTwoGenArgs(new Crawlable(), new Diesel()));
-    System.out.println(my_Diesel.genericMethodTwoGenArgs(new Diesel(), new Potato(5, "my_Potato")));
-    System.out.println(my_Petrol.genericMethodTwoGenArgs(new Petrol(), new Fly(5, "my_Fly")));
-    System.out.println(my_Water.genericMethodTwoGenArgs(new Water(), new Chamomile(5, "my_Chamomile")));
+    System.out.println(my_Crawlable.genericMethodTwoGenArgs(new Crocodile(5, "my_Crocodile"), new Diesel(8)));
+    System.out.println(my_Diesel.genericMethodTwoGenArgs(new Diesel(6), new Potato(5, "my_Potato")));
+    System.out.println(my_Petrol.genericMethodTwoGenArgs(new Petrol(5), new Fly(5, "my_Fly")));
+    System.out.println(my_Water.genericMethodTwoGenArgs(new Water(5), new Chamomile(5, "my_Chamomile")));
 
     my_String.genericMethodHalfGenArgs("this is a string", "this is another string");
     my_Integer.genericMethodHalfGenArgs(5, "this is a string");
@@ -139,9 +139,9 @@ public class GenericMethodsInGenericClassTRunner {
     my_Crocodile.genericMethodHalfGenArgs(new Crocodile(5, "my_Crocodile"), "this is a string");
     my_Pigeon.genericMethodHalfGenArgs(new Pigeon(5, "my_Pigeon"), "this is a string");
     my_Raven.genericMethodHalfGenArgs(new Raven(5, "my_Raven"), "this is a string");
-    my_Crawlable.genericMethodHalfGenArgs(new Crawlable(), "this is a string");
-    my_Diesel.genericMethodHalfGenArgs(new Diesel(), "this is a string");
-    my_Petrol.genericMethodHalfGenArgs(new Petrol(), "this is a string");
-    my_Water.genericMethodHalfGenArgs(new Water(), "this is a string line");
+    my_Crawlable.genericMethodHalfGenArgs(new Beetle(13, "Juice"), "this is a string");
+    my_Diesel.genericMethodHalfGenArgs(new Diesel(9), "this is a string");
+    my_Petrol.genericMethodHalfGenArgs(new Petrol(23), "this is a string");
+    my_Water.genericMethodHalfGenArgs(new Water(2), "this is a string line");
   }
 }

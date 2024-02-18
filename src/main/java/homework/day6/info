@@ -1,34 +1,19 @@
-задание по дженерикам:
-
-- создать класс обобщенного типа GenericMethodsInGenericClassT<T> и в нем:
--- невозвратный метод genericMethodHalfGenArgs, принимающий аргумент переменного типа и печатающий в консоль фразу "I am an object of X class", где X - название класса передаваемого аргумента
--- метод genericMethodTwoGenArgs, принимающий 2 аргумента переменного типа и возвращающий строку "We are objects of X class and Y class", где X и Y - название классов передаваемых аргументов
--- невозвратный метод genericMethodHalfGenArgs, принимающий 1 аргумент переменного типа и второй аргумент типа String, и печатающий в консоль фразу "I got an object of X class and string with N characters", где X - название класса передаваемых аргументов, N - количество символов в переданной строке
-
-- создать класс GenericMethodsInGenericClassTRunner с методом main и в нем:
--- создать обьекты типа GenericMethodsInGenericClassT<T> с параметрами типа String, Integer, Double и всеми типами, которые содержаться в пакете playground.essence
--- вызывать каждый из методов у каждого из обьектов, в случае, если метод возвратный - отпечатать возвращаемое им значение в консоль
-
-- создать класс обобщенного типа GenericMethodsInGenericClassTwoParams<X, Y> и в нем:
--- перегруженный метод genericMethodGenArgs, принимающий 1 или 2 аргумента переменного типа и возвращающий строку "I received N arguments of type: X class, Y class", где N - количество полученных аргументов, X и Y - название классов передаваемых аргументов
--- перегруженный невозвратный метод genericMethodHalfGenArgs, принимающий 1 или 2 аргумента переменного типа и второй или третитй аргумент типа String, и печатающий в консоль фразу "I got an object of X class and Y class and string with N characters", где X - название класса передаваемых аргументов, N - количество символов в переданной строке, перегрузку метода сделать для вариантов параметров типа (X, String), (Y, String)
-- создать класс GenericMethodsInGenericClassTwoParamsRunner с методом main и в нем:
--- создать обьекты типа GenericMethodsInGenericClassTwoParams <X, Y> с параметрами типа <String, String>, <String, Integer>, <String, Double>,  <Integer, Integer> и всеми типами, которые содержаться в пакете playground.essence, используя каждый из них хотя бы 1 раз
--- вызывать каждый из методов у каждого из обьектов, в случае, если метод возвратный - отпечатать возвращаемое им значение в консоль
-
-продолжение задания по package playground.essence
 
 Task 7:
 - обновляем интерфейсы:
---ползающие имеют метод void crawl(String direction, int distance); - принимает строку направления движения и целое число растояния, и печатает в консоль фразу "I am N, my name is M and I am crawling to D for F units", где N - название класса соответствующего обьекта, М - значение name обьекта, D и F - значения передаваемых аргументов, при этом после проползания крокодил издает в консоль "wr-wr-wrr-r..", а жук "vz-vz-vzz-zz.."
+--ползающие имеют метод void crawl(String direction, int distance);
+- принимает строку направления движения и целое число растояния,
+и печатает в консоль фразу "I am N, my name is M and I am crawling to D for F units",
+ где N - название класса соответствующего обьекта, М - значение name обьекта,
+ D и F - значения передаваемых аргументов, при этом после проползания крокодил издает в консоль "wr-wr-wrr-r..", а жук "vz-vz-vzz-zz.."
 
 - создаем классы:
 -- package playground.utils
 -- class DistanceGenerator
 у него есть публичный статический метод generateDistance() - который генерирует случайное число от 1 (включая) до 100 (исключая), печатает в консоль строку "DistanceGenerator: I have generated distance with value: X", где Х - сгенерированное число, и возвращает это число
+
 -- package playground.processors
 -- class CrawlableProcessor
-
 у него есть перегруженный публичный невозвратный метод:
 runCrawlable(Crawlable crawlable) - принимает обьект ползающего и вызывает у него метод crawl, которому передает случайное направление, генерируемое вызовом метода generateDirection() из утилиты DirectionGenerator, и случайную дистанцию, генерируемую вызовом метода generateDistance() из утилиты DistanceGenerator
 runCrawlable(Crawlable crawlable, String direction) - принимает обьект ползающего и строку направления, и вызывает у первого метод crawl, которому передает строку направления, переданную в качестве аргумента и случайную дистанцию, генерируемую вызовом метода generateDistance() из утилиты DistanceGenerator
@@ -69,7 +54,12 @@ Task 8:
 
 -- package playground.utils
 -- class VolumeGenerator
-у него есть публичный статический метод generateVolume(Pourable pourable) - который принимает аргумент льющегося типа генерирует случайное число обьема, которое в случае бензина или дизеля от 1 (включая) до 50 (исключая), а воды от 50 (включая) до 100 (исключая), и печатает в консоль строку "VolumeGenerator: I have generated volume of Х with value: Y", где Х - имя класса аргумента, Y - сгенерированное число, и возвращает это число
+у него есть публичный статический метод generateVolume(Pourable pourable) -
+который принимает аргумент льющегося типа генерирует случайное число обьема,
+которое в случае бензина или дизеля от 1 (включая) до 50 (исключая),
+а воды от 50 (включая) до 100 (исключая), и печатает в консоль строку
+"VolumeGenerator: I have generated volume of Х with value: Y",
+где Х - имя класса аргумента, Y - сгенерированное число, и возвращает это число
 -- package playground.processors
 -- class StorableProcessor
 

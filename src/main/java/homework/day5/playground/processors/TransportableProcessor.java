@@ -17,7 +17,8 @@ public class TransportableProcessor {
     int movedPoints = transportable.move(generateCoordinate(), generateCoordinate());
     String text =
         String.format(
-            "{Transportable %s was moved to %d points}", getClass().getSimpleName(), movedPoints);
+            "{Transportable %s was moved to %d points}",
+            this.getClass().getSimpleName(), movedPoints);
     System.out.println(text);
   }
 }

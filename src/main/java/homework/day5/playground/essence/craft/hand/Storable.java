@@ -1,5 +1,7 @@
 package homework.day5.playground.essence.craft.hand;
 
+import homework.day5.playground.essence.material.Pourable;
+
 public interface Storable {
-  // хранящие (Storable): бутылка, банка
+  void store(Pourable pourable, int amount);
 }
