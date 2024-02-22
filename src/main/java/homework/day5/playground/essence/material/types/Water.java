@@ -11,7 +11,7 @@ public class Water extends Matter implements Pourable {
 
   public void spread(String storeName) {
     System.out.printf(
-        "I am %s and I am spreading in %s%n", this.getClass().getSimpleName(), storeName);
+        "I am %s and I am spreading in %s", this.getClass().getSimpleName(), storeName);
     System.out.println("whobl-whobl..");
   }
 }

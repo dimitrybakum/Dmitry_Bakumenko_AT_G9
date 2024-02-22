@@ -16,7 +16,7 @@ public class VolumeGenerator {
     }
     System.out
         .printf(
-            "VolumeGenerator: I have generated volume of %s with value: %d%n",
+            "VolumeGenerator: I have generated volume of %s with value: %d",
             pourable.getClass().getSimpleName(), volume)
         .println();
     return volume;
