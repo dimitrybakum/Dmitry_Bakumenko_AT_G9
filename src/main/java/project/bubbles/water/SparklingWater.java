@@ -1,6 +1,6 @@
 package project.bubbles.water;
 
-import project.bubbles.gas.Bubble;
+import project.bubbles.boxing.gas.Bubble;
 
 public class SparklingWater extends Water {
   private boolean isOpened;
@@ -13,6 +13,7 @@ public class SparklingWater extends Water {
 
   public void pump(Bubble[] bubbles) {
     System.out.println("water carbonation in progress...");
+    this.bubbles = bubbles;
     for (int i = 0; i < bubbles.length; i++) {
       bubbles[i] = new Bubble("CO2");
       this.bubbles = bubbles;

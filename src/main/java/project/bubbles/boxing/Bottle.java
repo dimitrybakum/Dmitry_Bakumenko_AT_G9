@@ -1,16 +1,37 @@
 package project.bubbles.boxing;
 
+import project.bubbles.Containable;
+import project.bubbles.Transformable;
+import project.bubbles.matter.Material;
 import project.bubbles.water.Water;
 import project.bubbles.water.SparklingWater;
-import project.bubbles.gas.Bubble;
+import project.bubbles.boxing.gas.Bubble;
 
-public class Bottle {
+public class Bottle extends Vessel implements Containable {
   private double volume;
   private Water water = new SparklingWater(78, "v", "h", "d");
 
-  public Bottle(double volume) {
-    this.volume = volume;
+  public Bottle(double volume, double diameter, Material material) {
+    super(volume, diameter, material);
   }
+
+  // Метод из интерфейса Containable
+  @Override
+  public void addStuff(Transformable stuff) {
+    System.out.printf("Adding %s into Bottle", stuff.getClass().getSimpleName()).println();
+    this.stuff = stuff;
+  }
+
+  @Override
+  public void removeStuff(Transformable stuff) {
+    System.out.printf("Removing %s from Bottle", stuff.getClass().getSimpleName()).println();
+  }
+
+  @Override
+  public boolean isEmpty() {
+    return false;
+  }
+
 
   public double getVolume() {
     System.out.println("current volume is" + volume);

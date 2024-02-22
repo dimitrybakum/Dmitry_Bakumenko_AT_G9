@@ -28,7 +28,7 @@ public class RideableProcessorRunner {
           @Override
           public void drive(String direction) {
             System.out.printf(
-                "I am %s, my name is %s and I and drive to %s%n",
+                "I am %s, my name is %s and I and drive to %s",
                 getClass().getSimpleName(), name, direction);
           }
         };
@@ -39,7 +39,7 @@ public class RideableProcessorRunner {
           @Override
           public void drive(String direction) {
             System.out.printf(
-                "I am %s, my name is %s and I and drive to %s%n",
+                "I am %s, my name is %s and I and drive to %s",
                 getClass().getSimpleName(), name, direction);
           }
         };

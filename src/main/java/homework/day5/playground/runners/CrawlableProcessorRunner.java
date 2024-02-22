@@ -24,7 +24,7 @@ public class CrawlableProcessorRunner {
           @Override
           public void crawl(String direction, int distance) {
             System.out.printf(
-                "I am %s, my name is %s and I am crawling to %s for %d units%n",
+                "I am %s, my name is %s and I am crawling to %s for %d units",
                 this.getClass().getSimpleName(), name, direction, distance);
           }
         };
@@ -47,7 +47,7 @@ public class CrawlableProcessorRunner {
           @Override
           public void crawl(String direction, int distance) {
             System.out.printf(
-                "I am %s, my name is %s and I am crawling to %s for %d units%n",
+                "I am %s, my name is %s and I am crawling to %s for %d units",
                 this.getClass().getSimpleName(), name, "вниз", 37);
           }
         };

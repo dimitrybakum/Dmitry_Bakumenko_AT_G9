@@ -4,7 +4,9 @@ import homework.day5.playground.essence.Matter;
 import homework.day5.playground.essence.craft.Rideable;
 import homework.day5.playground.essence.craft.Transportable;
 
-public abstract class Vehicle extends Matter implements Transportable, Rideable {
+import java.io.Serializable;
+
+public abstract class Vehicle extends Matter implements Transportable, Rideable, Serializable {
   protected String name;
 
   public Vehicle(int mass, String name) {
@@ -32,7 +34,7 @@ public abstract class Vehicle extends Matter implements Transportable, Rideable 
   public void drive(String direction) {
     String text =
         String.format(
-            "I am %s, my name is %s and I and driving to %s%n",
+            "I am %s, my name is %s and I and driving to %s",
             getClass().getSimpleName(), this.getName(), direction);
     System.out.println(text);
   }

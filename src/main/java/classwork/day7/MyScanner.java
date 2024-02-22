@@ -12,7 +12,7 @@ public class MyScanner {
       if (incoming.equalsIgnoreCase("stop")) {
         return;
       }
-      System.out.printf("Just got '%s", incoming).println();
+      System.out.printf("Just got %s", incoming).println();
     }
   }
 }

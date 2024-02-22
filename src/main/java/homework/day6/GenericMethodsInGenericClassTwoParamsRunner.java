@@ -59,10 +59,10 @@ public class GenericMethodsInGenericClassTwoParamsRunner {
         my_Moped_Motorbike.genericMethodHalfGenArgs(new Moped(134, "Java"), new Motorbike(457, "Honda"), "this is a string");
 
         GenericMethodsInGenericClassTwoParams<Bottle, Can> my_Bottle_Can = new GenericMethodsInGenericClassTwoParams<>();
-        System.out.println(my_Bottle_Can.genericMethodGenArgs(new Bottle(0.5)));
-        System.out.println(my_Bottle_Can.genericMethodGenArgs(new Bottle(0.5), new Can(200, "my_Can")));
-        my_Bottle_Can.genericMethodHalfGenArgs(new Bottle(0.5), "this is a string");
-        my_Bottle_Can.genericMethodHalfGenArgs(new Bottle(0.5), new Can(200, "my_Can"), "this is a string");
+        //System.out.println(my_Bottle_Can.genericMethodGenArgs(new Bottle(0.5)));
+        //System.out.println(my_Bottle_Can.genericMethodGenArgs(new Bottle(0.5), new Can(200, "my_Can")));
+        //my_Bottle_Can.genericMethodHalfGenArgs(new Bottle(0.5), "this is a string");
+        //my_Bottle_Can.genericMethodHalfGenArgs(new Bottle(0.5), new Can(200, "my_Can"), "this is a string");
 
         GenericMethodsInGenericClassTwoParams<Mug, Chamomile> my_Mug_Chamomile = new GenericMethodsInGenericClassTwoParams<>();
         System.out.println(my_Mug_Chamomile.genericMethodGenArgs(new Mug(250, "my_Mug")));
