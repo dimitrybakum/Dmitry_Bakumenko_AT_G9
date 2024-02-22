@@ -1,4 +1,4 @@
-package project.bubbles.gas;
+package project.bubbles.boxing.gas;
 
 public class Bubble {
   private double volume = 0.3;

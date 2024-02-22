@@ -66,7 +66,7 @@ public class GenericMethodsInGenericClassTRunner {
     my_Car.genericMethodOneGenArg(new Car(1300, "Mazda"));
     my_Moped.genericMethodOneGenArg(new Moped(134, "Java"));
     my_Motorbike.genericMethodOneGenArg(new Motorbike(457, "Honda"));
-    my_Bottle.genericMethodOneGenArg(new Bottle(0.5));
+    //my_Bottle.genericMethodOneGenArg(new Bottle(0.5));
     my_Can.genericMethodOneGenArg(new Can(200, "my_Can"));
     my_Mug.genericMethodOneGenArg(new Mug(250, "my_Mug"));
     my_Chamomile.genericMethodOneGenArg(new Chamomile(5, "my_Chamomile"));
@@ -95,7 +95,7 @@ public class GenericMethodsInGenericClassTRunner {
     System.out.println(my_Car.genericMethodTwoGenArgs(new Car(1300, "Mazda"), new Rose(5, "my_Rose")));
     System.out.println(my_Moped.genericMethodTwoGenArgs(new Moped(134, "Java"), new Radish(5, "my_Radish")));
     System.out.println(my_Motorbike.genericMethodTwoGenArgs(new Motorbike(457, "Honda"), new Diesel(5)));
-    System.out.println(my_Bottle.genericMethodTwoGenArgs(new Bottle(0.5), new Maylily(5, "my_Maylily")));
+    //System.out.println(my_Bottle.genericMethodTwoGenArgs(new Bottle(0.5), new Maylily(5, "my_Maylily")));
     System.out.println(my_Can.genericMethodTwoGenArgs(new Can(200, "my_Can"), new Petrol(33)));
     System.out.println(my_Mug.genericMethodTwoGenArgs(new Mug(250, "my_Mug"), new Potato(5, "my_Potato")));
     System.out.println(my_Chamomile.genericMethodTwoGenArgs(new Chamomile(5, "my_Chamomile"), new Beetle(5, "my_Beetle")));
@@ -124,7 +124,7 @@ public class GenericMethodsInGenericClassTRunner {
     my_Car.genericMethodHalfGenArgs(new Car(1300, "Mazda"), "this is a string");
     my_Moped.genericMethodHalfGenArgs(new Moped(134, "Java"), "this is a string");
     my_Motorbike.genericMethodHalfGenArgs(new Motorbike(457, "Honda"), "this is a string");
-    my_Bottle.genericMethodHalfGenArgs(new Bottle(0.5), "this is a string");
+    //my_Bottle.genericMethodHalfGenArgs(new Bottle(0.5), "this is a string");
     my_Can.genericMethodHalfGenArgs(new Can(200, "my_Can"), "this is a string");
     my_Mug.genericMethodHalfGenArgs(new Mug(250, "my_Mug"), "this is a string");
     my_Chamomile.genericMethodHalfGenArgs(new Chamomile(5, "my_Chamomile"), "this is a string");

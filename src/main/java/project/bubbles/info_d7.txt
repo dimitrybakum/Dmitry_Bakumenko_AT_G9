@@ -1,0 +1,36 @@
++ добавим кода к баббл проекту:
+
+- abstract class Vessel (extending classes Bottle, Cup, Can)
+- each Vessel has:
+ -- private double volume;
+ -- private double diameter;
+ -- private int weight;
+ -- private Material material;
+ -- protected Transformable stuff;
+ -- volume,  diameter and material are set in constructor, weight is set as rounded to int volume*material density/diameter
+ -- getters and setters on all private fields
+ -- messages in methods should be universal for extending instances, e.g. System.out.printf("Getting %s volume: %s", this.getClass().getSimpleName(), volume).println(); - to print real instance name
+
+- abstract class Material (extending classes Glass, Plastic, Metal)
+ -- private double thermalConductivity;
+ -- private String color;
+ -- private double density;
+ -- all field are set in costructor
+ -- getters and setters
+
+- interface Transformable (implementing classes Water, Sand)
+
+- interface Containable (implementing classes Bottle, Cup, Can)
+ -- void addStuff (Transformable stuff) - adds some stuff (e.g. water, sand) to Containable object
+ -- Transformable removeStuff() - removes all stuff away
+ -- boolean isEmpty() - returns true if there is no stuff inside
+ -- messages in methods should be universal for extending instances, e.g.System.out.printf("Adding %s into Bottle", stuff.getClass().getSimpleName()).println(); - to print real instance name
+
+
+- existing classes, e.g. Bottle, Water need to be refactored according to suit new requirements
+- classes Glass, Plastic, Metal have constructor with no parameters, it calls super constructor with default values:
+-- Glass thermalConductivity 2.0, color "transparent", density 1.2
+-- Plastic thermalConductivity 1.0, color "white", density 0.4
+-- Metal thermalConductivity 12.0, color "metallic", density 8.3
+- class Bottle: make setBubbles private and call it in addStuff method in case staff is instance of SparklingWater class
+- class Bottle: check if staff is instance of SparklingWater class where it is necessary

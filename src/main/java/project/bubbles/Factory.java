@@ -1,13 +1,16 @@
 package project.bubbles;
 
 import project.bubbles.boxing.Bottle;
+import project.bubbles.matter.Material;
+import project.bubbles.matter.Plastic;
 import project.bubbles.water.SparklingWater;
 
 public class Factory {
   public static void main(String[] args) throws InterruptedException {
-    Bottle bottle1 = new Bottle(0.05);
-    Bottle bottle2 = new Bottle(0.1);
-    Bottle bottle3 = new Bottle(0.2);
+    Plastic plastic = new Plastic();
+    Bottle bottle1 = new Bottle(0.05, 0.25, plastic);
+    Bottle bottle2 = new Bottle(0.1, 0.25, plastic);
+    Bottle bottle3 = new Bottle(0.2, 0.25, plastic);
 
     bottle1.setWater(new SparklingWater( 12, "no", "transparent", "no"));
     bottle2.setWater(new SparklingWater( 18, "no", "transparent", "no"));
