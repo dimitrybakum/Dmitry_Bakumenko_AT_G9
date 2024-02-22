@@ -15,7 +15,7 @@ public class SparklingWater extends Water {
     System.out.println("water carbonation in progress...");
     for (int i = 0; i < bubbles.length; i++) {
       bubbles[i] = new Bubble("CO2");
-
+      this.bubbles = bubbles;
     }
   }
 
