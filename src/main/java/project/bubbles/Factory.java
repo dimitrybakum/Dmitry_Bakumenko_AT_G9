@@ -1,6 +1,7 @@
 package project.bubbles;
 
 import project.bubbles.boxing.Bottle;
+import project.bubbles.boxing.gas.Bubble;
 import project.bubbles.matter.Material;
 import project.bubbles.matter.Plastic;
 import project.bubbles.water.SparklingWater;
@@ -16,9 +17,9 @@ public class Factory {
     bottle2.setWater(new SparklingWater( 18, "no", "transparent", "no"));
     bottle3.setWater(new SparklingWater( 25, "no", "transparent", "no"));
 
-    bottle1.carbonation();
-    bottle2.carbonation();
-    bottle3.carbonation();
+    bottle1.addStuff(bottle1.getWater());
+    bottle2.addStuff(bottle1.getWater());
+    bottle3.addStuff(bottle1.getWater());
 
     bottle1.open();
     bottle2.open();
