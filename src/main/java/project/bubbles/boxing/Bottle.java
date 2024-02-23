@@ -13,13 +13,19 @@ public class Bottle extends Vessel implements Containable {
 
   public Bottle(double volume, double diameter, Material material) {
     super(volume, diameter, material);
+    this.volume = volume;
   }
 
-  // Метод из интерфейса Containable
+  // - class Bottle: make setBubbles private and call it in addStuff method in case staff is
+  // instance of SparklingWater class
+  // - class Bottle: check if staff is instance of SparklingWater class where it is necessary
   @Override
   public void addStuff(Transformable stuff) {
+    if (stuff instanceof SparklingWater) {
+      setBubbles();
+    }
     System.out.printf("Adding %s into Bottle", stuff.getClass().getSimpleName()).println();
-    this.stuff = stuff;
+    //this.stuff = stuff;
   }
 
   @Override
@@ -69,7 +75,7 @@ public class Bottle extends Vessel implements Containable {
     return volume;
   }
 
-  public void carbonation() {
+  private void setBubbles() {
     System.out.println("bubbles creation in progress...");
 
     int bubblesArray = (int) (10000 * volume);

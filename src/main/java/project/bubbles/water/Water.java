@@ -1,6 +1,8 @@
 package project.bubbles.water;
 
-public abstract class Water {
+import project.bubbles.Transformable;
+
+public abstract class Water implements Transformable {
   private int temperature = 0;
   private String color = "no";
   private String smell = "no";
