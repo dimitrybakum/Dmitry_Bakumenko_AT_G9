@@ -2,6 +2,7 @@ package homework.day8.pack;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 // 13.
 public class Water {
@@ -11,11 +12,6 @@ public class Water {
   public Water(String color, String smell) {
     this.color = color;
     this.smell = smell;
-  }
-
-  @Override
-  public String toString() {
-    return "Water{" + "color='" + color + '\'' + ", smell='" + smell + '\'' + '}';
   }
 
   public static void main(String[] args) {
@@ -34,6 +30,25 @@ public class Water {
     for (Water water : waters) {
       System.out.println(water.getColor() + "-" + water.getSmell());
     }
+  }
+
+  @Override
+  public String toString() {
+    return "Water{" + "color='" + color + '\'' + ", smell='" + smell + '\'' + '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Water water = (Water) o;
+    return Objects.equals(getColor(), water.getColor())
+        && Objects.equals(getSmell(), water.getSmell());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getColor(), getSmell());
   }
 
   public String getColor() {

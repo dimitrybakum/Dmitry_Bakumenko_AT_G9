@@ -2,6 +2,7 @@ package homework.day8.pack;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 // 12.
 public class Person {
@@ -11,11 +12,6 @@ public class Person {
   public Person(int age, String name) {
     this.age = age;
     this.name = name;
-  }
-
-  @Override
-  public String toString() {
-    return "Person{" + "age=" + age + ", name='" + name + '\'' + '}';
   }
 
   public static void main(String[] args) {
@@ -48,6 +44,24 @@ public class Person {
     for (int i = 0; i < people.size(); i++) {
       System.out.println(people.get(i).toString());
     }
+  }
+
+  @Override
+  public String toString() {
+    return "Person{" + "age=" + age + ", name='" + name + '\'' + '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Person person = (Person) o;
+    return getAge() == person.getAge() && Objects.equals(getName(), person.getName());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getAge(), getName());
   }
 
   public int getAge() {

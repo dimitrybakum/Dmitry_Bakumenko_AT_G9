@@ -1,9 +1,6 @@
 package homework.day8.pack;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 // 15.
 public class Chair {
@@ -52,6 +49,19 @@ public class Chair {
   public Chair(int height, int width) {
     this.height = height;
     this.width = width;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Chair chair = (Chair) o;
+    return getHeight() == chair.getHeight() && getWidth() == chair.getWidth();
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getHeight(), getWidth());
   }
 
   @Override

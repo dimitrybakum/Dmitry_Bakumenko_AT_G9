@@ -2,6 +2,7 @@ package homework.day8.pack;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import static java.lang.String.valueOf;
 
@@ -17,16 +18,27 @@ public class Bubble {
 
   @Override
   public String toString() {
-    return "Bubble{" +
-            "volume=" + volume +
-            ", name='" + name + '\'' +
-            '}';
+    return "Bubble{" + "volume=" + volume + ", name='" + name + '\'' + '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Bubble bubble = (Bubble) o;
+    return getVolume() == bubble.getVolume() && Objects.equals(getName(), bubble.getName());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getVolume(), getName());
   }
 
   public static void main(String[] args) {
     // Создать список пузырей (класса Bubble) bubbles из 3 пузырьков с обьемами (2, 4, 5) и именами
     // (CO2, O2, CO) соответственно, через (Arrays.asList())
-    List<Bubble> bubbles = Arrays.asList(new Bubble(2, "CO2"), new Bubble(4, "O2"), new Bubble(5, "CO"));
+    List<Bubble> bubbles =
+        Arrays.asList(new Bubble(2, "CO2"), new Bubble(4, "O2"), new Bubble(5, "CO"));
 
     // Проитерировать список через for-each и отпечатать объемы в консоль через пробел
     for (Bubble bubble : bubbles) {

@@ -12,11 +12,6 @@ public class Sand {
     this.name = name;
   }
 
-  @Override
-  public String toString() {
-    return "Sand{" + "weight=" + weight + ", name='" + name + '\'' + '}';
-  }
-
   public static void main(String[] args) {
     // Создать пустой список песка (класса Sand) sandbox (через new ArrayList)
     List<Sand> sands = new ArrayList<>();
@@ -43,7 +38,8 @@ public class Sand {
     // Создать пустую карту, где ключом является целое число, а значением объект песка
 
     Map<Integer, Sand> sandMap = new HashMap<>();
-    // Заполнить карту значениями из предыдущего списка, используя в качестве ключа любое уникальное число
+    // Заполнить карту значениями из предыдущего списка, используя в качестве ключа любое уникальное
+    // число
 
     int key = 1;
     for (Sand sand : sands) {
@@ -65,6 +61,24 @@ public class Sand {
     for (Map.Entry<Integer, Sand> entry : sandMap.entrySet()) {
       System.out.println("Ключ: " + entry.getKey() + ", Значение: " + entry.getValue());
     }
+  }
+
+  @Override
+  public String toString() {
+    return "Sand{" + "weight=" + weight + ", name='" + name + '\'' + '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Sand sand = (Sand) o;
+    return getWeight() == sand.getWeight() && Objects.equals(getName(), sand.getName());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getWeight(), getName());
   }
 
   public int getWeight() {
