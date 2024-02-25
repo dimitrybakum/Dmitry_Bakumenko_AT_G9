@@ -32,10 +32,8 @@ public class MyScanner4 {
   // в конец, через пустую строку ниже оригинал.
 
   public void main(String[] args) {
-    // Создаем объект класса Main
     MyScanner4 myScanner4 = new MyScanner4();
 
-    // Вызываем нестатический метод для записи фразы в файл
     myScanner4.writeToFile();
     System.out.println();
     myScanner4.readFromFileAndReplace();
