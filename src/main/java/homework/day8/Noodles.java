@@ -2,30 +2,30 @@ package homework.day8;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Noodles {
   // 10.
   public static void main(String[] args) {
 
-    //
-    // —оздать пустой список стрингов noodles (через new ArrayList)
     List<String> noddles = new ArrayList<>();
+    noddles.add("Hakka");
+    noddles.add("Ramen");
+    noddles.add("Hibachi");
+    noddles.add("Schezwan");
 
-    // ƒобавить в список 4 вида макарон (стринги Hakka, Ramen, Hibachi, Schezwan)
-    String[] noodlesTypes = {"Hakka", "Ramen", "Hibachi", "Schezwan"};
-    for (String elem : noodlesTypes) {
-      noddles.add(elem);
-    }
-    System.out.println(noddles);
-    // ѕроитерировать список через for-each и отпечатать слова в консоль через тире
+    System.out.println("ѕроитерировать список через for-each и отпечатать слова в консоль через тире");
+
     for (String n : noddles) {
-        String str = "";
-        str += n + "-";
-        System.out.printf(str);
+      System.out.printf(n + "-");
     }
-    // «аменить в каждом слове буквы "а" на букву "о"
+    System.out.println();
 
-    // ѕроитерировать список по индексу и отпечатать слова в консоль через пробел
+    System.out.println("«аменить в каждом слове буквы \"а\" на букву \"о\"");
+    // ToDo
+
+    System.out.println("ѕроитерировать список по индексу и отпечатать слова в консоль через пробел");
+    for (int i = 0; i < noddles.size(); i++) {
+      System.out.printf(noddles.get(i) + " ");
+    }
   }
 }

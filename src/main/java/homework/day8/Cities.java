@@ -1,35 +1,30 @@
 package homework.day8;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Cities {
-  // Создать пустой список стрингов cities (через new ArrayList)
-
   public static void main(String[] args) {
-
     ArrayList<String> cities = new ArrayList<>();
     cities.add("Минск");
     cities.add("Москва");
     cities.add("Берлин");
-    System.out.println(cities);
+
+    System.out.println("Проитерировать список через for-each и отпечатать слова в консоль с новой строки");
     for (String city : cities) {
       System.out.println(city);
     }
+    System.out.println();
+
+    System.out.println("Посчитать сумму всех буков во всех словах и вывести число в консоль");
     int counter = 0;
     for (String city : cities) {
       counter += city.length();
     }
     System.out.println(counter);
-    String str = "";
+
+    System.out.println("Проитерировать список по индексу и отпечатать слова в консоль через пробел");
     for (int i = 0; i < cities.size(); i++) {
-      str += cities.get(i) + " ";
+      System.out.printf(cities.get(i) + " ");
     }
-    System.out.println(str);
   }
-  // Добавить в список 3 города (Минск, Москва, Берлин)
-  // Проитерировать список через for-each и отпечатать слова в консоль с новой строки
-  // Посчитать сумму всех буков во всех словах и вывести число в консоль
-  // Проитерировать список по индексу и отпечатать слова в консоль через пробел
 }

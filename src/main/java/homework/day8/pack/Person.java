@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-// 12.
 public class Person {
   private int age;
   private String name;
@@ -16,31 +15,25 @@ public class Person {
 
   public static void main(String[] args) {
 
-    // Создать пустой список людей (класса Person) people (через new ArrayList)
     List<Person> people = new ArrayList<>();
 
-    // Заполнить 4 людьми с возрастом (32, 24, 55, 63) и именами (Коля, Оля, Вася, Маша)
-    // соответственно
-
-    // String[] names = {"Коля", "Оля", "Вася", "Маша"};
-    // int[] ages = {32, 24, 55, 63};
     people.add(0, new Person(32, "Коля"));
     people.add(1, new Person(24, "Оля"));
     people.add(2, new Person(55, "Вася"));
     people.add(3, new Person(63, "Маша"));
-    System.out.println(people);
 
-    // Проитерировать список через for-each и отпечатать возраст в консоль через пробел
+    System.out.println();
+    System.out.println("Проитерировать список через for-each и отпечатать возраст в консоль через пробел");
     for (Person pers : people) {
       System.out.printf(pers.getAge() + " ");
-    }
-    System.out.println();
-    // Проитерировать список через for-each и отпечатать имена в консоль через пробел
+    }System.out.println();
+
+    System.out.println("Проитерировать список через for-each и отпечатать имена в консоль через пробел");
     for (Person pers : people) {
       System.out.printf(pers.getName() + " ");
-    }
-    System.out.println();
-    // Проитерировать список по индексу и отпечатать людей (.toString()) в консоль с новой строки
+    }System.out.println();
+
+    System.out.println("Проитерировать список по индексу и отпечатать людей (.toString()) в консоль с новой строки");
     for (int i = 0; i < people.size(); i++) {
       System.out.println(people.get(i).toString());
     }

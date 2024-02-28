@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-// 13.
 public class Water {
   private String color;
   private String smell;
@@ -15,18 +14,14 @@ public class Water {
   }
 
   public static void main(String[] args) {
-    // Создать список воды (класса Water) water из 3 объектов воды
-    // с цветом (Прозрачная, Прозрачная, Мутная)
-    // и запахом (Нет, Нет, Аммиачный) соответственно,
-    // через (Arrays.asList())
     List<Water> waters =
         Arrays.asList(
             new Water("Прозрачная", "Нет"),
             new Water("Прозрачная", "Нет"),
             new Water("Мутная", "Аммиачный"));
-    System.out.println(waters);
-    // Проитерировать список через for-each и отпечатать пары цвет-вода через тире в консоль с новой
-    // строки
+
+
+    System.out.println("Проитерировать список через for-each и отпечатать пары цвет-вода через тире в консоль с новой строки");
     for (Water water : waters) {
       System.out.println(water.getColor() + "-" + water.getSmell());
     }

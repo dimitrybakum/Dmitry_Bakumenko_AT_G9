@@ -4,60 +4,58 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Birds {
-  // 6.
   public static void main(String[] args) {
 
-    // Создать список строк birds из 5 птиц (Чайка, Дрозд, Бусел, Голубь, Воробей, Цапля) через
-    // (Arrays.asList())
+    System.out.println(
+        "Создать список строк birds из 5 птиц (Чайка, Дрозд, Бусел, Голубь, Воробей, Цапля) через (Arrays.asList())");
     List<String> birds = Arrays.asList("Чайка", "Дрозд", "Бусел", "Голубь", "Воробей", "Цапля");
 
-    // Проитерировать список через for-each и отпечатать слова в консоль с новой строки в виде
-    // --Чайка--
+    System.out.println(
+        "Проитерировать список через for-each и отпечатать слова в консоль с новой строки в виде --Чайка--");
     for (String bird : birds) {
       System.out.println("--" + bird + "--");
     }
-    // Посчитать сколько птиц содержат больше 1 гласной и вывести в число в консоль
-    int counter = 0;
-    for (String bird : birds) {
-      // Подсчитываем количество гласных
-      int vowelsCount = countVowels(bird);
-      // Если количество гласных больше 1, увеличиваем счетчик
-      if (vowelsCount > 1) {
-        counter++;
-      }
+    System.out.println();
+
+    System.out.println(
+        "Посчитать сколько птиц содержат больше 1 гласной и вывести в число в консоль");
+    int count = countBirdsWithMultipleVowels(birds);
+    System.out.println("Количество птиц с более чем одной гласной: " + count);
+    System.out.println();
+
+    System.out.println(
+        "Проитерировать список по индексу и отпечатать слова в консоль через пробел");
+
+    for (int i = 0; i < birds.size(); i++) {
+      System.out.printf(birds.get(i) + " ");
     }
+    System.out.println();
 
-    // Выводим результат
-    System.out.println("Количество птиц с более чем 1 гласной: " + counter);
-
-    // Проитерировать список по индексу и отпечатать слова в консоль через пробел
-    String resultString = "";
-    for (String bird : birds) {
-      resultString += bird + " ";
-    }
-
-    System.out.println(resultString);
-    // Заменить 3-й элемент списка на Синица
+    System.out.println("Заменить 3-й элемент списка на Синица");
     birds.set(2, "Синица");
 
-    // Проитерировать список через for-each и отпечатать слова в консоль через пробел
-    String resultString2 = "";
+    System.out.println(
+        "Проитерировать список через for-each и отпечатать слова в консоль через пробел");
     for (String bird : birds) {
-      resultString2 += bird + " ";
+      System.out.printf(bird + " ");
     }
-    System.out.println(resultString2);
   }
-  public static int countVowels(String word) {
-    int counter = 0;
-    String vowels = "аеиоуэюя";
-    // Проверяем каждый символ в слове
-    for (int i = 0; i < word.length(); i++) {
-      char ch = word.charAt(i);
-      // Если символ является гласной, увеличиваем счетчик
-      if (vowels.indexOf(ch) >= 0) {
-        counter++;
+
+  public static int countBirdsWithMultipleVowels(List<String> birds) {
+    int count = 0;
+    String vowels = "аеиоуэюяАЕИОУЭЮЯ";
+    for (String bird : birds) {
+      int vowelCount = 0;
+      for (int i = 0; i < bird.length(); i++) {
+        char ch = bird.charAt(i);
+        if (vowels.indexOf(ch) >= 0) {
+          vowelCount++;
+        }
+      }
+      if (vowelCount > 1) {
+        count++;
       }
     }
-    return counter;
+    return count;
   }
 }

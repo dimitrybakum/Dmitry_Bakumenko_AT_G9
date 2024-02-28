@@ -6,61 +6,51 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
+import static homework.day8.FileReader.readFromFile;
+
 
 public class Auto {
-  // 4.
   public static void main(String[] args) {
-      // Создать набор строк стрингов cars из 7 авто (Мерс, Ауди, Жигуль, Рено, Жигуль, Жигуль, Ауди) (через new ArrayList)
+      System.out.println("Создать набор строк стрингов cars из 7 авто (Мерс, Ауди, Жигуль, Рено, Жигуль, Жигуль, Ауди) (через new ArrayList)");
 
-      List<String> mySetItem = new ArrayList<>();
+      List<String> carList = new ArrayList<>();
+      carList.add("Мерс");
+      carList.add("Ауди");
+      carList.add("Жигуль");
+      carList.add("Рено");
+      carList.add("Жигуль");
+      carList.add("Жигуль");
+      carList.add("Ауди");
 
-      String[] stringArr = "Мерс, Ауди, Жигуль, Рено, Жигуль, Жигуль, Ауди".split(", ");
 
-      for (String i : stringArr) {
-          (mySetItem).add(i);
-      }
-
-      // Проитерировать список через for-each и отпечатать слова в файл cars через с новой строки в кавычках
-      try (FileWriter fileWriter = new FileWriter("auto.txt")) {
-          for (String auto : mySetItem) {
-              fileWriter.write(STR."\'\{auto}\'\n");
+      System.out.println("Проитерировать список через for-each и отпечатать слова в файл cars через с новой строки в кавычках");
+      try (FileWriter fileWriter = new FileWriter("cars.txt")) {
+          for (String car : carList) {
+              fileWriter.write(STR."\'\{car}\'\n");
           }
           System.out.println("авто были записаны в файл auto.txt");
       } catch (IOException e) {
           System.out.println("Ошибка при записи в файл: " + e.getMessage());
       }
-      readFromFile();
+      readFromFile("cars.txt");
 
-      // Найти и удалить из набора авто, в названии которых больше 4 букв
-      Iterator<String> iterator = mySetItem.iterator();
+
+      System.out.println("Найти и удалить из набора авто, в названии которых больше 4 букв");
+      Iterator<String> iterator = carList.iterator();
       while (iterator.hasNext()) {
           if(iterator.next().length() > 4){
               iterator.remove();
           }
 
       }
-      System.out.println(mySetItem);
+      System.out.println(carList);
 
-      // Проитерировать список через for-each и отпечатать слова в консоль через пробел
-      System.out.println("~~!!!!!!!!!!!!!!!!");
+
+      System.out.println("Проитерировать список через for-each и отпечатать слова в консоль через пробел");
       String str  = "";
-      for (String i : mySetItem) {
-          str  += i + " ";
-
+      for (String car : carList) {
+          str  += car + " ";
       }
       System.out.println(str);
   }
-    public static void readFromFile() {
-        try {
-            BufferedReader fileReader = new BufferedReader(new FileReader("auto.txt"));
-            String line = fileReader.readLine();
-            while (line != null) {
-                System.out.println("fileReader: " + line);
-                line = fileReader.readLine();
-            }
-            fileReader.close();
-        } catch (IOException e) {
-            System.out.println("Ошибка при чтении из файла: " + e.getMessage());
-        }
-    }
 }
