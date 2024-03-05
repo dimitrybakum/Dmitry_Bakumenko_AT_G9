@@ -7,9 +7,6 @@ public class ElementsRunner {
     Stream<String> elements =
         Stream.of("Text field", "Radio", "Check-box", "Drop-down", "Picker", "Breadcrumb");
 
-    System.out.println(
-        "Для каждого элемента стрима пробежаться по отдельным словам и если слово нечетное, то заменить в нем все буквы \"e\" на букву \"o\", а если четное, то заменить слово на числоколичества буков в этом слове");
-
     elements
         .flatMap(str -> Stream.of(str.split("[\\s-]+")))
         .map(
@@ -19,11 +16,7 @@ public class ElementsRunner {
               } else {
                 return String.valueOf(word.length());
               }
-            })
+            }).distinct()
         .forEach(System.out::println);
-
-    // ToDo Оставить в потоке только уникальные значения
-
-    // ToDo Отпечатать в консоль с новой строки
   }
 }

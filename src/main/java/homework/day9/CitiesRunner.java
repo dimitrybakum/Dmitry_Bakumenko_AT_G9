@@ -18,6 +18,5 @@ public class CitiesRunner {
 
     System.out.println("Посчитать сумму всех буков во всех словах и вывести число в консоль");
     System.out.println(cities.stream().collect(Collectors.joining()).length());
-
   }
 }

@@ -14,60 +14,30 @@ import static homework.day8.FileReader.readFromFile;
 
 public class ChairRunner {
   public static void main(String[] args) {
-    System.out.println(
-        "Отфильтровать только те стулья, который выше или равны 100 и уже или равны 50");
-    Stream<Chair> furniture =
+
+    Stream<Chair> furniture1 =
         Stream.of(new Chair(120, 40), new Chair(90, 30), new Chair(100, 55), new Chair(110, 45));
-    furniture
-        .filter(chair -> chair.getHeight() >= 100 && chair.getWidth() <= 50)
-        .forEach(System.out::println);
 
-    System.out.println(
-        "Отсортировать по высоте, а если высота равна, то по ширине в нисходящем порядке");
-    Stream<Chair> furniture2 =
-        Stream.of(new Chair(120, 40), new Chair(90, 30), new Chair(110, 50), new Chair(110, 45));
-    furniture2
-        .sorted(
-            Comparator.comparingInt(Chair::getHeight).thenComparingInt(Chair::getWidth).reversed())
-        .forEach(System.out::println);
-
-    System.out.println(
-        "На основании существующего потока данных создать новый, в котором каждый новый Chair "
-            + "имеет высоту, деленную на 2, и ширину, умноженную на случайное число от 3 до 8 включительно");
-    Stream<Chair> furniture3 =
-        Stream.of(new Chair(120, 40), new Chair(90, 30), new Chair(100, 50), new Chair(110, 45));
-    furniture3
-        .peek(
-            chair -> {
-              chair.setHeight(chair.getHeight() / 2);
-              chair.setWidth((int) (chair.getWidth() * Math.TAU));
-            })
-        .forEach(System.out::println);
-
-    System.out.println(
-        "На основании получившегося потока данных создать новый, представляющий "
-            + "собой уникальный набор высот стульев умноженных на их ширину");
-    Stream<Chair> furniture4 =
-        Stream.of(new Chair(120, 40), new Chair(90, 30), new Chair(100, 50), new Chair(110, 45));
-    furniture4.map(chair -> chair.getWidth() * chair.getHeight()).forEach(System.out::println);
-
-    System.out.println("Найти наибольшее значение в получившемся потоке");
-    Stream<Chair> furniture5 =
-        Stream.of(new Chair(120, 40), new Chair(90, 30), new Chair(100, 50), new Chair(110, 45));
-    int maxVolume =
-        furniture5.mapToInt(chair -> chair.getHeight() * chair.getWidth()).max().orElse(0);
-
-    System.out.println(maxVolume);
-
-    System.out.println(
-        "Создать новый обьект Bubble с обьемом равным найденному наибольшему значению "
-            + "и именем равным найденному наибольшему значению, представленным в виде словесного выражения каждой цифры"
-            + "числа этого значения, указанного чере пробел");
+    int value =
+        furniture1
+            .filter(chair -> chair.getHeight() >= 100 && chair.getWidth() <= 50)
+            .sorted(
+                Comparator.comparingInt(Chair::getHeight)
+                    .thenComparingInt(Chair::getWidth)
+                    .reversed())
+            .peek(
+                chair -> {
+                  chair.setHeight(chair.getHeight() / 2);
+                  chair.setWidth((int) (chair.getWidth() * Math.TAU));
+                })
+            .map(chair -> chair.getWidth() * chair.getHeight())
+            .max(Integer::compareTo)
+            .orElse(0);
 
     Bubble bubble =
         new Bubble(
-            maxVolume,
-            String.valueOf(maxVolume)
+            value,
+            String.valueOf(value)
                 .chars()
                 .mapToObj(
                     ch -> {
@@ -88,7 +58,6 @@ public class ChairRunner {
                 .collect(Collectors.joining(" ")));
     System.out.println(bubble);
 
-    System.out.println("Напечатать строковое значение полученного обьекта в текстовый файл");
     try (FileWriter writer = new FileWriter("chairs.txt")) {
       writer.write(bubble.getName());
     } catch (IOException ex) {
