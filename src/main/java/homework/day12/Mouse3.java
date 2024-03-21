@@ -18,20 +18,17 @@ public class Mouse3 {
 
   public static void main(String[] args) {
     List<Mouse3> mice = new ArrayList<>();
-    for (int i = 1; i < 281; i++) {
+    for (int i = 1; i < 280; i++) {
       mice.add(new Mouse3(i));
     }
 
     for (int i = 1; i < 6; i++) {
       int finalI = i;
-      new Thread(
-              () -> {
+      new Thread(() -> {
                 while (!mice.isEmpty()) {
-                  Mouse3 mouse = mice.remove(mice.size() - 1);
-                  System.out.printf("removed in Thread-%s  ", finalI).println();
-
                   try {
-                    mouse.peep();
+                    mice.removeLast().peep();
+                    System.out.printf("removed in Thread-%s  ", finalI).println();
                   } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                   }
