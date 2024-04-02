@@ -2,10 +2,10 @@ package project.bubbles.boxing;
 
 import project.bubbles.Containable;
 import project.bubbles.Transformable;
-import project.bubbles.matter.Material;
-import project.bubbles.water.Water;
-import project.bubbles.water.SparklingWater;
 import project.bubbles.boxing.gas.Bubble;
+import project.bubbles.matter.Material;
+import project.bubbles.water.SparklingWater;
+import project.bubbles.water.Water;
 
 public class Bottle extends Vessel implements Containable {
   private double volume;
@@ -16,16 +16,12 @@ public class Bottle extends Vessel implements Containable {
     this.volume = volume;
   }
 
-  // - class Bottle: make setBubbles private and call it in addStuff method in case staff is
-  // instance of SparklingWater class
-  // - class Bottle: check if staff is instance of SparklingWater class where it is necessary
   @Override
   public void addStuff(Transformable stuff) {
     if (stuff instanceof SparklingWater) {
       setBubbles();
     }
     System.out.printf("Adding %s into Bottle", stuff.getClass().getSimpleName()).println();
-    //this.stuff = stuff;
   }
 
   @Override
@@ -38,9 +34,8 @@ public class Bottle extends Vessel implements Containable {
     return false;
   }
 
-
   public double getVolume() {
-    System.out.println("current volume is" + volume);
+    System.out.println("current volume is " + volume);
     return volume;
   }
 
@@ -51,8 +46,7 @@ public class Bottle extends Vessel implements Containable {
 
   public void open() {
     System.out.println("the bottle cork flew somewhere far away");
-    SparklingWater sparklingWater = (SparklingWater) water;
-    sparklingWater.setOpened();
+    ((SparklingWater) water).setOpened();
   }
 
   public void warm(int temperature) {
@@ -66,7 +60,7 @@ public class Bottle extends Vessel implements Containable {
   }
 
   public void setWater(Water water) {
-    System.out.printf("pouring water into the bottle...").println();
+    System.out.printf("pouring water into the bottle...%n").println();
     this.water = water;
   }
 

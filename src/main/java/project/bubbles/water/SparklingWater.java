@@ -3,12 +3,12 @@ package project.bubbles.water;
 import project.bubbles.boxing.gas.Bubble;
 
 public class SparklingWater extends Water {
-  private boolean isOpened;
+  private boolean isOpened = false;
   private Bubble[] bubbles;
 
   public SparklingWater(int temperature, String color, String transparency, String smell) {
     super(temperature, transparency, color, smell);
-    isOpened();
+    new Thread(() -> this.isOpened()).start();
   }
 
   public void pump(Bubble[] bubbles) {
@@ -23,7 +23,7 @@ public class SparklingWater extends Water {
   public void setOpened() {
     System.out.printf("bottle is opened").println();
     isOpened = true;
-    degas();
+    // degas();
   }
 
   private void degas() {
@@ -46,6 +46,16 @@ public class SparklingWater extends Water {
   }
 
   private void isOpened() {
-    // ------ есть приватный метод void isOpened(), который пока ничего не делает
+    while (!isOpened) {
+      System.out.printf("Bottle still not opened, lets wait for 2 sec").println();
+      try {
+        Thread.sleep(2000);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
+
+    System.out.println("Water is opened");
+    degas();
   }
 }
