@@ -1,0 +1,20 @@
+Logo
+//*[contains(@alt,'Mail.ru')]
+//*[contains(@data-testid,'whiteline-logo-item')]
+
+Cloud
+//*[@id="ph-whiteline"]/div/nav/ul//li[last()-7]
+
+Create email
+//a[contains(@class,'resplash-btn resplash-btn_outlined-themed resplash-btn_mailbox-big cea-fefe-ehxscg')]
+//div[@id='mailbox']//div[last()]/*
+
+Registration
+//a[text()='Регистрация']
+//div[@id='ph-whiteline']/div/div/a
+
+LogIn
+//Button[text()='Войти']
+//div[@id='ph-whiteline']/div/div/Button
+
+Жутко багнутый юай, очень противно там чему то учится....

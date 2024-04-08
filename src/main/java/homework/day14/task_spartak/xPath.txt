@@ -1,0 +1,33 @@
+Импрессо
+//a[contains(@href,"/products/Impresso/")]
+//div[contains(@class,'content_menu')]//div[contains(@class,'main-nav')]//ul[contains(@class,'menu full')]//li[last()-3]//div[contains(@class,'child_wrapp')]//a[last()-5]
+Search
+//i[contains(@class,'search fa search-btn lupa')]
+//div[contains(@class,'lang-block')]//div[last()-3]
+
+SpecialView
+//a[contains(@href,'/products/?special_version=Y')]
+//div[contains(@class,'lang-block')]/span
+
+Ru
+//div[contains(@class,'lang-block')]//div[contains(@class,'header__lang')]//a[last()-3]
+//a[contains(text(),'Ru')]
+
+Ch
+//div[contains(@class,'lang-block')]//div[contains(@class,'header__lang')]//a[last()]
+//a[contains(text(),'Ch')]
+
+DownloadCatalog
+//*[contains(text(),'Скачать каталог')]
+//*[contains(@class,'download-catalog')]
+
+SideSlider
+//a[contains(@class,'flex-next')]
+//ul[contains(@class,'flex-direction-nav')]//li[last()]
+
+BottomSlider
+//div[contains(@class,'flexslider')]//ol//li[last()]
+
+VK
+//a[contains(@href,'https://vk.com/spartakby')]
+//*[@src='/bitrix/templates/our_shop/images/VK.svg']

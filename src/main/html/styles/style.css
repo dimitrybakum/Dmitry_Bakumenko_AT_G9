@@ -1,0 +1,12 @@
+H1 {
+color: #333366;
+font-size: 200%;
+font-family: Arial, Verdana, sans-serif;
+text-align: center;
+}
+body {
+  background-color: lightblue;
+}
+p {
+padding-left: 20px;
+}
